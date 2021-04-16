@@ -13,7 +13,7 @@ class Achetable : public CaseMonop
     protected:
 
     int m_prix;
-    int m_Proprio;
+    Joueur m_Proprio;
 
 
 };
