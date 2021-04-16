@@ -1,13 +1,21 @@
 #ifndef DEF_ACHETABLE
 #define DEF_ACHETABLE
 
-#include "Case.hpp"
+#include "CaseMonop.hpp"
 
-class Achetable : public Case
+class Achetable : public CaseMonop
 {
     public:
 
-    private:
+    Achetable();
+    void acheter(Joueur j);
+
+    protected:
+
+    int m_prix;
+    int m_Proprio;
+
+
 };
 
 #endif
