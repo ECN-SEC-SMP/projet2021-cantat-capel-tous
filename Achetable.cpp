@@ -8,14 +8,14 @@
 
 using namespace std;
 
-Achetable::Achetable()
+Achetable::Achetable(int prix) : m_prix(prix);
 {
 
 }
 
 void Achetable::acheter(Joueur j)
 {
-
+  m_Proprio = j;
 }
 
 
