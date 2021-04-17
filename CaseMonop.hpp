@@ -7,9 +7,12 @@ class CaseMonop
 {
     public:
 
-    private:
+    CaseMonop(std::string nom); //Constructeur
+    virtual ~CaseMonop();
+    
+    protected:
 
-    std::string nom;
+    std::string m_nom;
 };
 
 #endif
