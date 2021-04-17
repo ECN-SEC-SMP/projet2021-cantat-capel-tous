@@ -8,7 +8,8 @@ class CaseMonop
     public:
 
     CaseMonop(std::string nom); //Constructeur
-    virtual ~CaseMonop();
+    virtual void afficher(std::ostream &flux) const;
+    ~CaseMonop();
     
     protected:
 

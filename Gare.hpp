@@ -15,7 +15,8 @@ class Gare : public Achetable
 {
     public:
     Gare(std::string nom, int prix);
-    int isProprio();
+    ~Gare();
+    
     
     private:
 

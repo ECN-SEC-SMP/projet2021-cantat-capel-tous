@@ -16,6 +16,7 @@ class Achetable : public CaseMonop
     public:
     Achetable();
     Achetable(std::string nom, int prix);
+    int isProprio();
     //void acheter(Joueur j);
 
     protected:

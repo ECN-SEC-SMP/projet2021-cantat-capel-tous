@@ -9,7 +9,8 @@ class Constructible : public Achetable
     public:
 
     Constructible();
-    //Constructible(Joueur proprio);
+    Constructible(std::string nom, int prix);
+    ~Constructible();
 
     void acheteMaison(int nombre);
     void acheteHotel(int nombre);
