@@ -1,2 +1,3 @@
 language = "cpp"
-run = "Makefile"
+run = "make && ./main.out"
+
