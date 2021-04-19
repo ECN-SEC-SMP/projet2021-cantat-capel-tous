@@ -1,11 +1,19 @@
 
+
 #include <iostream>
 #include "Joueur.h"
 #include <stdio.h>
 #include <string>
 
+#include "Achetable.hpp"
+#include "CaseMonop.hpp"
+#include "Constructible.hpp"
+#include "Gare.hpp"
+
+
 
 using namespace std;
+
 
 int main() {
 
