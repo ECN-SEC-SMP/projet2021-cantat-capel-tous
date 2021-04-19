@@ -9,6 +9,7 @@
 #include "CaseMonop.hpp"
 #include "Constructible.hpp"
 #include "Gare.hpp"
+#include "Joueur.h"
 
 
 
