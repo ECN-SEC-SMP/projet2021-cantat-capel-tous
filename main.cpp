@@ -18,6 +18,7 @@ using namespace std;
 
 int main() {
 
+
 //création de joueurs
 Joueur j1("sacha",0);
 Joueur j2("thibault",0);

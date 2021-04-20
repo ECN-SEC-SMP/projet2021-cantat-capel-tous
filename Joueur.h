@@ -17,7 +17,9 @@ private :
 public :
 ///contructeur
 Joueur(string nom, int position);
-    Joueur();
+
+Joueur();
+
 
 //accesseurs
 string getNom() const;
@@ -25,14 +27,16 @@ int getFortune() const;
 int getPosition() const;
 
 ///méthodes
-bool paiement(int somme, Joueur &j);
+bool paiement(int somme, Joueur &jAdverse);
+bool prelevement(int somme_du);
 int lanceDe();
 void tourDeJeu();
 
 
+
 };
+
+
 
 ostream& operator<<(ostream& out,  Joueur const& j);
 #endif 
-
-
