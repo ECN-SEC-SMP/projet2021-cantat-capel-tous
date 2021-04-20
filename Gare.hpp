@@ -16,11 +16,14 @@ class Gare : public Achetable
     public:
     Gare(std::string nom, int prix);
     ~Gare();
+
+    // bool isAchetable() const;
     
     
     private:
 
-
 };
 
-#endif
+ostream& operator<<(ostream& out,  Gare const& c);
+
+#endif 

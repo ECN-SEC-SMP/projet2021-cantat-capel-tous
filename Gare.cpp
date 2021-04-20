@@ -11,7 +11,7 @@
 #include "Achetable.hpp"
 #include "Gare.hpp"
 
-//#include "Joueur.h"
+#include "Joueur.h"
 
 using namespace std;
 
@@ -19,6 +19,31 @@ Gare::Gare(string nom, int prix) : Achetable(nom,prix)
 {
 
 }
+
+Gare::~Gare()
+{
+
+}
+
+// bool Gare::isAchetable() const
+// {
+//   return true;
+// }
+
+ ostream& operator<<(ostream& out,  Gare const& c)
+{
+  out <<  c.getNom() << " (coût : " << c.getPrix() << " ) - ";
+  if(c.getProprioName() == string()) out << "sans propriétaire " <<endl; //Pas de propriétaire
+  else 
+  {
+    //Il y a un propriétaire
+    out << "propriétaire : " <<  c.getProprioName() << ", loyer = XXXXX"<<endl;
+  }
+   return out;
+}
+
+
+
 
 // void CaseMonop::afficher(ostream &flux) const
 // {

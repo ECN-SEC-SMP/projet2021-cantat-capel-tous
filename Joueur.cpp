@@ -124,4 +124,7 @@ void Joueur::tourDeJeu(){
 }
 
 
-
+ostream& operator<<(ostream& out,  Joueur const& j){
+    out <<j.getNom()<<" - "<<j.getPosition()<<" - "<<j.getFortune()<<endl;
+    return out;
+}

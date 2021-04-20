@@ -17,7 +17,9 @@ private :
 public :
 ///contructeur
 Joueur(string nom, int position);
+
 Joueur();
+
 
 //accesseurs
 string getNom() const;
@@ -33,6 +35,8 @@ void tourDeJeu();
 
 
 };
+
+
 
 ostream& operator<<(ostream& out,  Joueur const& j);
 #endif 

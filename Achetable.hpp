@@ -10,21 +10,30 @@
 #define DEF_ACHETABLE
 
 #include "CaseMonop.hpp"
+#include "Joueur.h"
 
 class Achetable : public CaseMonop
 {
     public:
     Achetable();
     Achetable(std::string nom, int prix);
-    int isProprio();
-    //void acheter(Joueur j);
+    int isProprio() const;
+    int getPrix() const;
+    bool haveProprio() const;
+    string getProprioName() const;
+    Joueur getProprio() const;
+    bool acheter(Joueur j);
 
     protected:
 
     int m_prix;
-   // Joueur m_Proprio;
+    bool m_stateProprio = 0;
+    Joueur m_Proprio;
+    
 
 
 };
+
+ostream& operator<<(ostream& out,  Achetable const& c);
 
 #endif

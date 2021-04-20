@@ -14,13 +14,19 @@ class Constructible : public Achetable
 
     void acheteMaison(int nombre);
     void acheteHotel(int nombre);
+    
+    int getNbMaison() const;
+    int getNbHotel() const;
+    // bool isAchetable() const;
 
     private:
 
-    int m_hotel;
-    int m_maison;
+    int m_hotel= 0;
+    int m_maison= 0;
 
 
 };
 
+
+ostream& operator<<(ostream&, Constructible const&);
 #endif

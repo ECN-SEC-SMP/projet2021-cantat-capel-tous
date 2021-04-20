@@ -15,18 +15,25 @@ CaseMonop::CaseMonop(string nom) : m_nom(nom)
   
 }
 
- void CaseMonop::afficher(ostream &flux) const
+CaseMonop::~CaseMonop()
+{
+  
+}
+
+
+
+
+ string CaseMonop::getNom() const
  {
-    
-    //  if(isProprio != 0)
-    //  {
-    //    flux << m_nom << " (coût : " << m_prix << " ) propriétaire : " << m_proprio;
-    //  }
-    //  else
-    //  {
-    //    flux << m_nom << " (coût : " << m_prix << " ) - pas de propriétaire";
-    //  }
+   return m_nom;
  }
+
+ ostream& operator<<(ostream& out, CaseMonop const & c)
+{
+
+  out <<  c.getNom()<<endl;
+    return out;
+}
 
  
 
