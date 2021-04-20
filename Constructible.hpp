@@ -17,6 +17,7 @@ class Constructible : public Achetable
     
     int getNbMaison() const;
     int getNbHotel() const;
+    // bool isAchetable() const;
 
     private:
 

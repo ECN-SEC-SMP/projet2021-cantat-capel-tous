@@ -46,6 +46,11 @@ int Constructible::getNbHotel() const
   return m_hotel;
 }
 
+// bool Constructible::isAchetable() const
+// {
+//   return true;
+// }
+
 
 
 //  ostream& operator<<(ostream& out,  Constructible const& c)
@@ -67,11 +72,11 @@ int Constructible::getNbHotel() const
 {
    
     out <<  c.getNom() << " (coût : " << c.getPrix() << " ) - ";
-    if (c.getProprio() == string()) out <<" sans propriétaire" << endl;  //Il y n'y a pas de propriétaire
+    if (c.getProprioName() == string()) out <<" sans propriétaire" << endl;  //Il y n'y a pas de propriétaire
     else 
     {
       //Il y a un propriétaire
-      out << " propriétaire : " <<  c.getProprio() << ", ";
+      out << " propriétaire : " <<  c.getProprioName() << ", ";
       int nbMaison = c.getNbMaison();
       int nbHotel = c.getNbHotel();
       //cout << "M :" << nbMaison << " H :"<< nbHotel << endl;

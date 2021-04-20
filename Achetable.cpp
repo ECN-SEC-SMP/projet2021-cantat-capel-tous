@@ -28,15 +28,20 @@ int Achetable::getPrix() const
   return m_prix;
 }
 
-string Achetable::getProprio() const
+Joueur Achetable::getProprio() const
+{
+  return m_Proprio;
+}
+
+string Achetable::getProprioName() const
 {
   return m_Proprio.getNom();
 }
 
 bool Achetable::acheter(Joueur j)
 {
-//  if (j.getFortune(m_prix)) return true;
- // else return false; // Renvoit 0 si pas assez d'argent chez le joeur
+  if (j.prelevement(m_prix)) return true;
+  else return false; // Renvoit 0 si pas assez d'argent chez le joeur
 }
 
 bool Achetable::haveProprio() const

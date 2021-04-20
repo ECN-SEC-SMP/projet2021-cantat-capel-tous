@@ -16,6 +16,8 @@ class Gare : public Achetable
     public:
     Gare(std::string nom, int prix);
     ~Gare();
+
+    // bool isAchetable() const;
     
     
     private:

@@ -15,6 +15,12 @@ CaseMonop::CaseMonop(string nom) : m_nom(nom)
   
 }
 
+CaseMonop::~CaseMonop()
+{
+  
+}
+
+
 
 
  string CaseMonop::getNom() const

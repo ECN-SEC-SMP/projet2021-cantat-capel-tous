@@ -20,7 +20,8 @@ class Achetable : public CaseMonop
     int isProprio() const;
     int getPrix() const;
     bool haveProprio() const;
-    string getProprio() const;
+    string getProprioName() const;
+    Joueur getProprio() const;
     bool acheter(Joueur j);
 
     protected:
