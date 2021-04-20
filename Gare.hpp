@@ -20,7 +20,8 @@ class Gare : public Achetable
     
     private:
 
-
 };
 
-#endif
+ostream& operator<<(ostream& out,  Gare const& c);
+
+#endif 

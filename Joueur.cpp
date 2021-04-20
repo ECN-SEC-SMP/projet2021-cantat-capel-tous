@@ -1,6 +1,6 @@
 #include <iostream>
 #include "Joueur.h"
-#include "random"
+#include <random>
 using namespace std;
 
 
@@ -9,6 +9,12 @@ Joueur::Joueur(string n,int p){
   this->nom=n;
   this->fortune=10000;
   this->position=p;
+}
+
+Joueur::Joueur(){
+    this->nom=string();
+    this->fortune=0;
+    this->position=0;
 }
 
 ///Asseceurs
@@ -54,4 +60,7 @@ void Joueur::tourDeJeu(){
 }
 
 
-
+ostream& operator<<(ostream& out,  Joueur const& j){
+    out <<j.getNom()<<" - "<<j.getPosition()<<" - "<<j.getFortune()<<endl;
+    return out;
+}
