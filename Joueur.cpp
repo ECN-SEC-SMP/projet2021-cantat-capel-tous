@@ -1,6 +1,6 @@
 #include <iostream>
 #include "Joueur.h"
-#include "random"
+#include <random>
 using namespace std;
 
 
@@ -9,6 +9,12 @@ Joueur::Joueur(string n,int p){
   this->nom=n;
   this->fortune=10000;
   this->position=p;
+}
+
+Joueur::Joueur(){
+    this->nom=string();
+    this->fortune=0;
+    this->position=0;
 }
 
 ///Asseceurs
@@ -40,6 +46,15 @@ bool Joueur::paiement(int x, Joueur &j){
   return i;
 }
 
+bool Joueur::prelevement(int x){
+  bool i =false;
+  if (x <= this->fortune){
+    this->fortune-=x;
+    i=true;
+  }
+  return i;
+}
+
 //lancé de dé
 int Joueur::lanceDe(){
   return rand()%6+1;
@@ -49,8 +64,63 @@ int Joueur::lanceDe(){
 void Joueur::tourDeJeu(){
 
   ///calcul de la nouvelle case courante
-  this->position+=lanceDe();
-  cout<<"Le joueur "<< this->nom << " est en : " << this->position<<endl;
+  
+  //le joue
+  
+  /*
+
+  ///si la case est de type Achetable
+  if (vectorPlateau[CaseMonop.getId].isAchetable()){
+    
+    //si la case n'a pas de propriétaire et que impaire
+    if (getProprio==null ){
+
+      AcheteCase();
+
+    }
+
+    //si la case a un propriétaire on le paye
+    else paiement(CaseMonop.getPrix(), CaseMonop.getProprio());
+    
+  }
+
+  else {
+
+    //si la case est la case de départ
+    if (vectorPlateau[position].getTypeCaseNA() == 0) {
+
+    }
+
+
+    //si la case est la prison
+    if (vectorPlateau[position].getTypeCaseNA()  == 1) {
+      
+    }
+
+    //si la case est une gare
+    if (vectorPlateau[position].getTypeCaseNA()  == 2) {
+      
+    }
+
+    //si la case est une carte chance
+    if (vectorPlateau[position].getTypeCaseNA()  == 3) {
+      
+    }
+
+
+  }
+
+  cout<<"Le joueur "<< this->nom << " est en : " << CaseMonop.getId() <<endl;
+
+  }
+
+
+
+  ///si la case est de type Achetable et a un propriétaire
+
+*/
+
+
 }
 
 
