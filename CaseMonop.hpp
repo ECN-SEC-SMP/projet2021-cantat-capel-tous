@@ -9,11 +9,12 @@ class CaseMonop
 {
     public:
 
+    CaseMonop();
     CaseMonop(std::string nom); //Constructeur
     ~CaseMonop();
     
     std::string getNom() const;
-    // virtual bool isAchetable() const;
+    int getId() const;
     
     protected:
     std::string m_nom;

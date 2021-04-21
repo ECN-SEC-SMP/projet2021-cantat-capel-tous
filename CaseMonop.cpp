@@ -10,6 +10,11 @@
 
 using namespace std;
 
+CaseMonop::CaseMonop()
+{
+
+}
+
 CaseMonop::CaseMonop(string nom) : m_nom(nom)
 {
   
