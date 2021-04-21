@@ -1,14 +1,17 @@
 #include <iostream>
 #include "Joueur.h"
+#include "CaseMonop.hpp"
+#include "Plateau.h"
 #include <random>
 using namespace std;
 
 
 ///Contructeur 
-Joueur::Joueur(string n,int p){
+Joueur::Joueur(string n,int id, CaseMonop* position, Plateau* plat){
   this->nom=n;
   this->fortune=10000;
-  this->position=p;
+  this->position=position;
+  this->plateau=plat;
 }
 
 Joueur::Joueur(){
@@ -24,7 +27,7 @@ int Joueur::getFortune() const{
 string Joueur::getNom() const {
   return nom;
 }
- int Joueur::getPosition() const{
+ CaseMonop* Joueur::getPosition() const{
    return position;
 }
 

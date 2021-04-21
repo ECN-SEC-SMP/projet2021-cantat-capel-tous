@@ -10,6 +10,7 @@
 #include "Constructible.hpp"
 #include "Gare.hpp"
 #include "Joueur.h"
+#include "Plateau.h"
 
 
 
@@ -17,6 +18,9 @@ using namespace std;
 
 
 int main() {
+
+Plateau plat= Plateau();
+plat.initPlateau();
 
 
 //création de joueurs

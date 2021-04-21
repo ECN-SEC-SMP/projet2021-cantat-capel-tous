@@ -7,9 +7,10 @@
 #include <vector>
 #include <queue>
 #include <string>
-// #include "CaseMonop.h"
-// #include "Gare.h"
-// #include "Constructible.h"
+#include "CaseMonop.hpp"
+#include "Gare.hpp"
+#include "Constructible.hpp"
+#include "Achetable.hpp"
 
 using namespace std ;
 
@@ -26,7 +27,7 @@ public:
   void initPlateau();
   int nbGares(Joueur j);
   void Affiche();
-  void Avancer();
+  void Avance();
   bool EstFini();
 //supplémentaire
   void AjouterJoueur(string nomJoueur);
@@ -37,7 +38,7 @@ public:
   void JoueurActuelAPerdu();
 private:
 /*****Attributs*****/
-  vector<CaseMonop*> _plateau[40];
+  CaseMonop* _plateau[40];
   vector<Joueur*> _joueurs;
   int _tour;
 };
