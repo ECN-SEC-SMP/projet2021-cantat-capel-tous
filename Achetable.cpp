@@ -19,7 +19,7 @@ using namespace std;
 
 Achetable::Achetable(string nom, int prix): CaseMonop(nom), m_prix(prix)
 {
-    Joueur j(string(), 0);
+    Joueur j = Joueur(string());
     this->m_Proprio = j;
 }
 

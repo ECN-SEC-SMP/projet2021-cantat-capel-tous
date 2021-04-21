@@ -20,6 +20,12 @@ Joueur::Joueur(){
     this->position=0;
 }
 
+Joueur::Joueur(string s) : nom(s)
+{    
+    this->fortune=0;
+    this->position=0;
+}
+
 ///Asseceurs
 int Joueur::getFortune() const{
   return fortune;

@@ -43,4 +43,6 @@ private:
   int _tour;
 };
 
+ostream& operator<<(ostream& out,  Plateau const& p);
+
 #endif	/* PLATEAU_H */

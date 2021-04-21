@@ -1,10 +1,12 @@
-#ifndef Joueur_h
-#define Joueur_h
+#ifndef JOUEUR_H
+#define JOUEUR_H
 
 #include <string>
 #include "CaseMonop.hpp"
 #include "Plateau.h"
 using namespace std;
+
+
 
 class Joueur {
 
@@ -20,8 +22,11 @@ private :
 public :
 ///contructeur
 Joueur(string n,int id, CaseMonop* position, Plateau* plat);
+///contructeur 2
+Joueur(string s);
 
 Joueur();
+~Joueur();
 
 
 //accesseurs
