@@ -17,6 +17,7 @@ class CaseMonop
     
     protected:
     std::string m_nom;
+    int m_id;
 };
 
  ostream& operator<<(ostream& out, CaseMonop const & c);

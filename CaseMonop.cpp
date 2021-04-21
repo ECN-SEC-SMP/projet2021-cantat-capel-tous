@@ -28,6 +28,12 @@ CaseMonop::~CaseMonop()
    return m_nom;
  }
 
+int CaseMonop::getId() const
+ {
+    
+  return m_id;
+ }
+
  ostream& operator<<(ostream& out, CaseMonop const & c)
 {
 
