@@ -2,6 +2,8 @@
 #define Joueur_h
 
 #include <string>
+#include "CaseMonop.hpp"
+#include "Plateau.h"
 using namespace std;
 
 class Joueur {
@@ -9,14 +11,15 @@ class Joueur {
 ///attributs
 private : 
   string nom;
+  int id;
   int fortune;
-  int position;
-  //reference au plateau
+  CaseMonop* position;
+  Plateau* plateau;
 
 
 public :
 ///contructeur
-Joueur(string nom, int position);
+Joueur(string n,int id, CaseMonop* position, Plateau* plat);
 
 Joueur();
 
@@ -24,7 +27,7 @@ Joueur();
 //accesseurs
 string getNom() const;
 int getFortune() const;
-int getPosition() const;
+CaseMonop* getPosition() const;
 
 ///méthodes
 bool paiement(int somme, Joueur &jAdverse);
