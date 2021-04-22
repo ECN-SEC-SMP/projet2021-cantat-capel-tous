@@ -25,6 +25,7 @@ Gare::~Gare()
 
 }
 
+
 // bool Gare::isAchetable() const
 // {
 //   return true;

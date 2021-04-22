@@ -11,6 +11,7 @@
 //#include "Gare.hpp"
 #include "Plateau.hpp"
 #include "Depart.hpp"
+#include "Gare.hpp"
 
 
 
@@ -19,6 +20,9 @@ using namespace std;
 
 
 int main() {
+
+//Gare *CaseDep = new Gare("GDN", 500);
+//cout <<*CaseDep <<endl;
 
 Plateau plat = Plateau();
 plat.initPlateau();

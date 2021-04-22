@@ -28,6 +28,8 @@ CaseMonop::~CaseMonop()
 
 
 
+
+
  string CaseMonop::getNom() const
  {
    return m_nom;

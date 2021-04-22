@@ -14,6 +14,8 @@ Joueur::Joueur(string n,int id, int position, Plateau* plat){
   this->plateau=plat;
 }
 
+Joueur::~Joueur(){}
+
 Joueur::Joueur(){
     this->nom=string();
     this->fortune=0;

@@ -13,6 +13,7 @@ class CaseMonop
     CaseMonop(std::string nom); //Constructeur
     ~CaseMonop();
     
+;
     std::string getNom() const;
     int getId() const;
     

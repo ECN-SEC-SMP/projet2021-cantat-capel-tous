@@ -48,7 +48,8 @@ void Plateau::Affiche()
   {
     if (this->_plateau[i] != nullptr)
     {
-      _plateau[i]->afficheCase(); //méthode réalisée par Sacha
+      cout << *_plateau[i] <<endl;
+     // _plateau[i]->affiche(); //méthode réalisée par Sacha
     }
   }
 }
@@ -158,6 +159,7 @@ void Plateau::initPlateau()
     cin>> Pseudo;
     this->_joueurs.push_back(new Joueur(Pseudo, y, 0, this));
   } 
+  cout << "here";
   //On affiche les cases du tableau
   Affiche();
 }
