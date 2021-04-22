@@ -10,7 +10,7 @@
 #define DEF_NONACHETABLE
 
 #include "CaseMonop.hpp"
-#include "Joueur.h"
+#include "Joueur.hpp"
 
 class NonAchetable : public CaseMonop
 {

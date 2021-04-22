@@ -9,8 +9,8 @@
 #ifndef DEF_ACHETABLE
 #define DEF_ACHETABLE
 
-#include "CaseMonop.hpp"
-#include "Joueur.h"
+#include "Joueur.hpp"
+//#include "CaseMonop.hpp"
 
 class Achetable : public CaseMonop
 {

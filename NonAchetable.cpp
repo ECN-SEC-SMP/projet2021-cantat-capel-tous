@@ -10,7 +10,7 @@
 #include <stdlib.h>
 #include "CaseMonop.hpp"
 #include "NonAchetable.hpp"
-#include "Joueur.h"
+#include "Joueur.hpp"
 
 
 

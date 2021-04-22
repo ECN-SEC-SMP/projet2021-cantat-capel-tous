@@ -11,7 +11,7 @@
 #include "Achetable.hpp"
 #include "Depart.hpp"
 
-#include "Joueur.h"
+#include "Joueur.hpp"
 
 using namespace std;
 

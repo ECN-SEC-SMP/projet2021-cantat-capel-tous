@@ -1,5 +1,5 @@
-#include "De.h"
-#include "utile.h"
+#include "De.hpp"
+#include "utile.hpp"
 
 int De::Lancer(int min, int max)
 {

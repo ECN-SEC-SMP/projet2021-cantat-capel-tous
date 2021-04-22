@@ -1,7 +1,11 @@
-#include "Plateau.h"
-#include "Joueur.h"
+#include "Plateau.hpp"
+#include "Joueur.hpp"
 #include "CaseMonop.hpp"
 #include "Achetable.hpp"
+#include "Depart.hpp"
+#include "Gare.hpp"
+#include "Prison.hpp"
+#include "Chance.hpp"
 #include "Constructible.hpp"
 #include <string> 
 #include <iostream>
@@ -38,13 +42,13 @@ void Plateau::Affiche()
   cout<<"Voici l'ordre des joueurs :"<<endl;
   for(Joueur &j : this->_joueurs)
   {
-    cout<<j.getNom<<" est sur la case :"<<j.getPosition()->getID()<<endl ;
+    cout<<j.getNom()<<" est sur la case :"<<j.getPosition()<<endl ;
   }
   for(int i=0; i<40; i++ )
   {
     if (this->_plateau[i] != nullptr)
     {
-      _plateau[i]->afficheCase() //méthode réalisée par Sacha
+      _plateau[i]->afficheCase(); //méthode réalisée par Sacha
     }
   }
 }
@@ -62,32 +66,32 @@ void Plateau::initPlateau()
   //On initialise le nombre de tour à 0 
   _tour = 0;
   //déclaration des (40) cases dans le vecteur plateau
-  //this->_plateau[0] =  new Depart("Case Départ", 0);
-  Depart depart = Depart("Case Départ", 0);
+  //this->_plateau[0] =  new Depart();
+  Depart depart = Depart();
   _plateau[0] = &depart;
   Constructible BDB = Constructible("Boulevard de Belleville", 600);
   _plateau[1] = &BDB;
-  Chance chance1 = Chance("La chance vous sourrit", 300);
+  Chance chance1 = Chance();
   _plateau[2] = &chance1;
   Constructible RL = Constructible("Rue Lecourbe", 450);
   _plateau[3] = &RL;
-  Chance chance2 = Chance("La chance vous sourrit", 150);
+  Chance chance2 = Chance();
   _plateau[4] = &chance2;
   Gare GM = Gare("Gare Montparnasse", 1500);
   _plateau[5] = &GM;
   Constructible RDV = Constructible("Rue de Vaugirard", 400);
   _plateau[6] = &RDV;
-  Chance chance3 = Chance("La chance vous sourrit", 250);
+  Chance chance3 = Chance();
   _plateau[7] = &chance3;
   Constructible RDC = Constructible("Rue des Courcelles", 500);
   _plateau[8] = &RDC;
   Constructible ADLR = Constructible("Avenue de la République", 500);
   _plateau[9] = &ADLR;
-  Prison prison("Prison ! heureusment c'est une visite.", 0);
+  Prison prison = Prison();
   _plateau[10] = &prison;
   Constructible BDLV = Constructible("Boulevard de la Vilette", 700);
   _plateau[11] = &BDLV;
-  Chance chance4 = Chance("La chance vous sourrit", 300);
+  Chance chance4 = Chance();
   _plateau[12] = &chance4;  
   Constructible ADN = Constructible("Avenue de Neuilly", 400);
   _plateau[13] = &ADN;
@@ -97,17 +101,17 @@ void Plateau::initPlateau()
   _plateau[15] = &GDL;
   Constructible AM = Constructible("Avenue Mozart", 600);
   _plateau[16] = &AM;
-  Chance chance5 = Chance("La chance vous sourrit", 500);
+  Chance chance5 = Chance();
   _plateau[17] = &chance5;
   Constructible BSM = Constructible("Boulevard Saint-Michel", 500);
   _plateau[18] = &BSM;
   Constructible PP = Constructible("Place Pigale", 650);
   _plateau[19] = &PP;
-  Chance chance6 = Chance("La chance vous sourrit", 700);
+  Chance chance6 = Chance();
   _plateau[20] = &chance6;
-  Constructible AM = Constructible("Avenue Matignon", 550);
-  _plateau[21] = &AM;
-  Chance chance7 = Chance("La chance vous sourrit", 300);
+  Constructible AMN = Constructible("Avenue Matignon", 550);
+  _plateau[21] = &AMN;
+  Chance chance7 = Chance();
   _plateau[22] = &chance7;
   Constructible BMS = Constructible("Boulevard Malsherbes", 450);
   _plateau[23] = &BMS;
@@ -119,27 +123,27 @@ void Plateau::initPlateau()
   _plateau[26] = &FSH;
   Constructible PDLB = Constructible("Place de la Bourse", 500);
   _plateau[27] = &PDLB;
-  Chance chance8 = Chance("La chance vous sourrit", 400);
+  Chance chance8 = Chance();
   _plateau[28] = &chance8;
   Constructible RLF = Constructible("Rue La Fayelle", 300);
   _plateau[29] = &RLF;
-  Prison prison2("Prison ! les barreaux se ferme.", 0);
+  Prison prison2 = Prison();
   _plateau[30] = &prison2;
   Constructible ADB = Constructible("Avenue de Breteuille", 400);
   _plateau[31] = &ADB;
   Constructible AR = Constructible("Avenue Roch", 400);
   _plateau[32] = &AR;
-  Chance chance9 = Chance("La chance vous sourrit", 450);
+  Chance chance9 = Chance();
   _plateau[33] = &chance9;
   Constructible BDC = Constructible("Boulevard des Capucines", 500);
   _plateau[34] = &BDC;
   Gare GSL = Gare("Gare Saint-Lazare", 1300);
   _plateau[35] = &GSL;
-  Chance chance10 = Chance("La chance vous sourrit", 500);
+  Chance chance10 = Chance();
   _plateau[36] = &chance10;
   Constructible ADCE = Constructible("Avenue des Champs-Elysée", 800);
   _plateau[37] = &ADCE;
-  Chance chance11  = Chance("La chance vous sourrit mais ne vous donne rien", 0);
+  Chance chance11  = Chance();
   _plateau[38] = &chance11;
   Constructible RDLP = Constructible("Rue de la Paix", 650);
   _plateau[39] = &RDLP;
@@ -152,7 +156,7 @@ void Plateau::initPlateau()
   for(int y=0; y<=nbJoueurs; y++)
   {
     cin>> Pseudo;
-    this->_joueurs.push_back(Joueur(Pseudo, y, this->_plateau[0], this));
+    this->_joueurs.push_back(Joueur(Pseudo, y, 0, this));
   } 
   //On affiche les cases du tableau
   Affiche();
@@ -181,7 +185,7 @@ int Plateau::nbGares(Joueur j)
  */
 CaseMonop* Plateau::Avance(CaseMonop *cMonop, int numero)
 {
-  return this->_plateau[cMonop->getID()+numero];
+  return this->_plateau[cMonop->getId()+numero];
 }
 
 

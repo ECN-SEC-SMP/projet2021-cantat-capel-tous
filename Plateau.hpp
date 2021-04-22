@@ -8,9 +8,9 @@
 #include <queue>
 #include <string>
 #include "CaseMonop.hpp"
-#include "Gare.hpp"
-#include "Constructible.hpp"
-#include "Achetable.hpp"
+//#include "Gare.hpp"
+//#include "Constructible.hpp"
+//#include "Achetable.hpp"
 
 using namespace std ;
 
@@ -27,7 +27,7 @@ public:
   void initPlateau();
   int nbGares(Joueur j);
   void Affiche();
-  void Avance();
+  CaseMonop* Avance(CaseMonop *c, int d);
   bool EstFini();
 //supplémentaire
   void AjouterJoueur(string nomJoueur);

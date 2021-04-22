@@ -1,11 +1,11 @@
 
 
 
-main.out: main.o Joueur.o CaseMonop.o Achetable.o NonAchetable.o Constructible.o  Gare.o Chance.o Depart.o Prison.o
-	g++ -o main.out main.o Joueur.o CaseMonop.o Achetable.o NonAchetable.o Constructible.o  Gare.o Chance.o Depart.o Prison.o
+main.out: main.o Joueur.o CaseMonop.o Achetable.o NonAchetable.o Constructible.o  Gare.o Chance.o Depart.o Prison.o Plateau.o
+	g++ -o main.out main.o Joueur.o CaseMonop.o Achetable.o NonAchetable.o Constructible.o  Gare.o Chance.o Depart.o Prison.o Plateau.o
 
 
-Achetable.o: Achetable.cpp Achetable.hpp CaseMonop.hpp
+Achetable.o: Achetable.cpp Achetable.hpp CaseMonop.hpp Joueur.hpp
 	g++ -c Achetable.cpp
 CaseMonop.o: CaseMonop.cpp CaseMonop.hpp
 	g++ -c CaseMonop.cpp
@@ -14,7 +14,7 @@ Constructible.o: Constructible.cpp Constructible.hpp
 Gare.o: Gare.cpp Gare.hpp
 	g++ -c Gare.cpp
 
-Joueur.o: Joueur.cpp Joueur.h
+Joueur.o: Joueur.cpp Joueur.hpp
 	g++ -c Joueur.cpp
 
 
@@ -27,14 +27,14 @@ Depart.o: Depart.cpp Depart.hpp
 NonAchetable.o: NonAchetable.cpp NonAchetable.hpp
 	g++ -c NonAchetable.cpp
 
-Plateau.o: Plateau.cpp Plateau.h
+Plateau.o: Plateau.cpp Plateau.hpp
 	g++ -c Plateau.cpp
 
 
-Prison.o: Prison.cpp Prison.h
+Prison.o: Prison.cpp Prison.hpp
 	g++ -c Prison.cpp
 
-main.o: main.cpp 
+main.o: main.cpp Joueur.hpp Achetable.hpp CaseMonop.hpp Constructible.hpp Gare.hpp Plateau.hpp Depart.hpp
 	g++ -c main.cpp
 
 

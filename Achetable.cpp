@@ -10,9 +10,8 @@
 #include <stdlib.h>
 #include "CaseMonop.hpp"
 #include "Achetable.hpp"
-#include "Joueur.h"
 
-
+#include "Joueur.hpp"
 
 using namespace std;
 

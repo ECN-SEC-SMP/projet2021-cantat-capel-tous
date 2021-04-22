@@ -1,16 +1,15 @@
 
 
 #include <iostream>
-#include "Joueur.h"
+#include "Joueur.hpp"
 #include <stdio.h>
 #include <string>
 
-#include "Achetable.hpp"
-#include "CaseMonop.hpp"
-#include "Constructible.hpp"
-#include "Gare.hpp"
-#include "Joueur.h"
-#include "Plateau.h"
+//#include "Achetable.hpp"
+//#include "CaseMonop.hpp"
+//#include "Constructible.hpp"
+//#include "Gare.hpp"
+#include "Plateau.hpp"
 #include "Depart.hpp"
 
 
@@ -21,8 +20,8 @@ using namespace std;
 
 int main() {
 
-// Plateau plat = Plateau();
-// plat.initPlateau();
+Plateau plat = Plateau();
+plat.initPlateau();
 
 
 

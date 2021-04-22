@@ -11,7 +11,7 @@
 #include "NonAchetable.hpp"
 #include "Chance.hpp"
 
-#include "Joueur.h"
+#include "Joueur.hpp"
 
 using namespace std;
 
