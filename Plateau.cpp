@@ -40,9 +40,9 @@ Plateau::~Plateau()
 void Plateau::Affiche()
 {
   cout<<"Voici l'ordre des joueurs :"<<endl;
-  for(Joueur &j : this->_joueurs)
+  for(Joueur *j : this->_joueurs)
   {
-    cout<<j.getNom()<<" est sur la case :"<<j.getPosition()<<endl ;
+    cout<<j->getNom()<<" est sur la case :"<<j->getPosition()<<endl ;
   }
   for(int i=0; i<40; i++ )
   {
@@ -156,7 +156,7 @@ void Plateau::initPlateau()
   for(int y=0; y<=nbJoueurs; y++)
   {
     cin>> Pseudo;
-    this->_joueurs.push_back(Joueur(Pseudo, y, 0, this));
+    this->_joueurs.push_back(new Joueur(Pseudo, y, 0, this));
   } 
   //On affiche les cases du tableau
   Affiche();
