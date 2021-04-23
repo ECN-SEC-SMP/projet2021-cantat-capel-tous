@@ -27,3 +27,8 @@ void NonAchetable::affiche() const
 
 }
 NonAchetable::~NonAchetable(){}
+
+int NonAchetable::isLoyer() const
+{
+  return 0;
+}

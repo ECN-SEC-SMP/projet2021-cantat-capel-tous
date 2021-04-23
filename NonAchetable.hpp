@@ -20,6 +20,7 @@ class NonAchetable : public CaseMonop
     ~NonAchetable();
 
    virtual void affiche() const;
+   virtual int isLoyer() const;
     
 
 

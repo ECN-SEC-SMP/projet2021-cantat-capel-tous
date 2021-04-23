@@ -17,7 +17,7 @@ class Chance : public NonAchetable
     Chance();
     ~Chance();
     virtual void affiche() const override;
-   
+    virtual int isLoyer() const override;
     
     
     private:

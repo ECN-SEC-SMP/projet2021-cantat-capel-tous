@@ -30,6 +30,11 @@ void Depart::affiche() const
  cout << *this << endl;
 }
 
+int Depart::isLoyer() const
+{
+  return 0;
+}
+
  ostream& operator<<(ostream& out,  Depart const& c)
 {
   out <<"Depart"<<endl;

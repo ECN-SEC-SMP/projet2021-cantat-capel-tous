@@ -33,7 +33,7 @@ void Gare::affiche() const
 
 int Gare::isLoyer() const
 {
-  return 2500*m_Proprio.NbGare();
+  return 2500*m_Proprio.NbGare(); //Renvoi 2500 * le nombre de gare
 }
 
 

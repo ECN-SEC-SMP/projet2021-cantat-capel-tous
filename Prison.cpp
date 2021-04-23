@@ -30,6 +30,11 @@ void Prison::affiche() const
  cout << *this << endl;
 }
 
+int Prison::isLoyer() const
+{
+  return 0;
+}
+
  ostream& operator<<(ostream& out,  Prison const& c)
 {
   out <<"Prison"<<endl;

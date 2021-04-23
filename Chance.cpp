@@ -30,6 +30,11 @@ void Chance::affiche() const
  cout << *this << endl;
 }
 
+int Chance::isLoyer() const
+{
+  return 0;
+}
+
  ostream& operator<<(ostream& out,  Chance const& c)
 {
   out <<"Chance"<<endl;

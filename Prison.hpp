@@ -17,6 +17,7 @@ class Prison : public NonAchetable
     Prison();
     ~Prison();
     virtual void affiche() const override;
+    virtual int isLoyer() const override;
 
    
     

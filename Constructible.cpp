@@ -30,7 +30,10 @@ void Constructible::affiche() const
 
 int Constructible::isLoyer() const
 {
- return 0;
+  int a = 8; //Coeff pour maison
+  int b = 2; //Coeff pour hotel
+  return m_loyer * a^m_maison * b^m_hotel;
+
 }
 
 
