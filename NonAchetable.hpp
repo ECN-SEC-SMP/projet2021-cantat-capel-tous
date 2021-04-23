@@ -16,6 +16,7 @@ class NonAchetable : public CaseMonop
 {
     public:
     NonAchetable();
+   virtual void affiche() const;
     
 
     protected:

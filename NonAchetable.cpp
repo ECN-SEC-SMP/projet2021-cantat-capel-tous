@@ -17,7 +17,12 @@
 using namespace std;
 
 
-NonAchetable::NonAchetable(): CaseMonop()
+NonAchetable::NonAchetable()
+{
+
+}
+
+void NonAchetable::affiche() const
 {
 
 }

@@ -48,8 +48,8 @@ void Plateau::Affiche()
   {
     if (this->_plateau[i] != nullptr)
     {
-      cout << *_plateau[i] <<endl;
-     // _plateau[i]->affiche(); //méthode réalisée par Sacha
+      cout << "ICI" <<endl;
+     _plateau[i]->affiche(); //méthode réalisée par Sacha
     }
   }
 }
@@ -68,7 +68,10 @@ void Plateau::initPlateau()
   _tour = 0;
   //déclaration des (40) cases dans le vecteur plateau
   //this->_plateau[0] =  new Depart();
-  Depart depart = Depart();
+
+  //Depart depart = Depart();
+  Gare depart = Gare("GDN", 3000);
+
   _plateau[0] = &depart;
   Constructible BDB = Constructible("Boulevard de Belleville", 600);
   _plateau[1] = &BDB;

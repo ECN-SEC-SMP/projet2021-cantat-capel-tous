@@ -1,8 +1,8 @@
 
 
 
-main.out: main.o Joueur.o CaseMonop.o Achetable.o NonAchetable.o Constructible.o  Gare.o Chance.o Depart.o Prison.o Plateau.o
-	g++ -o main.out main.o Joueur.o CaseMonop.o Achetable.o NonAchetable.o Constructible.o  Gare.o Chance.o Depart.o Prison.o Plateau.o
+main.out: main.o Joueur.o  Achetable.o NonAchetable.o Constructible.o  Gare.o Chance.o Depart.o Prison.o Plateau.o
+	g++ -o main.out main.o Joueur.o  Achetable.o NonAchetable.o Constructible.o  Gare.o Chance.o Depart.o Prison.o Plateau.o
 
 
 Achetable.o: Achetable.cpp Achetable.hpp CaseMonop.hpp Joueur.hpp

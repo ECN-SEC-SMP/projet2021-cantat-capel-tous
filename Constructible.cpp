@@ -23,6 +23,11 @@ Constructible::~Constructible()
   
 }
 
+void Constructible::affiche() const
+{
+ cout << *this << endl;
+}
+
 
 
 

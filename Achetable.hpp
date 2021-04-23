@@ -17,6 +17,7 @@ class Achetable : public CaseMonop
     public:
     Achetable();
     Achetable(std::string nom, int prix);
+    ~Achetable();
     int isProprio() const;
     int getPrix() const;
     bool haveProprio() const;
@@ -25,6 +26,8 @@ class Achetable : public CaseMonop
     bool acheter(Joueur j);
     std::string getNom() const;
     int getId() const;
+
+    virtual void affiche() const;
 
     protected:
 

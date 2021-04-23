@@ -25,6 +25,11 @@ Gare::~Gare()
 
 }
 
+void Gare::affiche() const
+{
+ cout << *this << endl;
+}
+
 
 // bool Gare::isAchetable() const
 // {

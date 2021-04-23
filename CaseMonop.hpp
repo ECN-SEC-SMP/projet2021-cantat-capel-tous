@@ -9,11 +9,10 @@ class CaseMonop
 {
     public:
 
-    CaseMonop();
-    CaseMonop(std::string nom); //Constructeur
-    ~CaseMonop();
     
-;
+    virtual ~CaseMonop();
+    
+    virtual void affiche() const;
     std::string getNom() const;
     int getId() const;
     

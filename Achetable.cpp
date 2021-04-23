@@ -22,6 +22,8 @@ Achetable::Achetable(string nom, int prix): m_nom(nom), m_prix(prix)
     this->m_Proprio = j;
 }
 
+Achetable::~Achetable(){}
+
  string Achetable::getNom() const
  {
    return m_nom;
@@ -52,6 +54,11 @@ bool Achetable::acheter(Joueur j)
 {
   if (j.prelevement(m_prix)) return true;
   else return false; // Renvoit 0 si pas assez d'argent chez le joeur
+}
+
+void Achetable::affiche() const
+{
+
 }
 
 bool Achetable::haveProprio() const

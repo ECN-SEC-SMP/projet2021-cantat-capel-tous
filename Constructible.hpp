@@ -12,6 +12,7 @@ class Constructible : public Achetable
     Constructible(std::string nom, int prix);
     ~Constructible();
 
+    virtual void affiche() const override;
     void acheteMaison(int nombre);
     void acheteHotel(int nombre);
     

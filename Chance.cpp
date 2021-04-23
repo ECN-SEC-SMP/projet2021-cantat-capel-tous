@@ -25,6 +25,11 @@ Chance::~Chance()
 
 }
 
+void Chance::affiche() const
+{
+ cout << *this << endl;
+}
+
  ostream& operator<<(ostream& out,  Chance const& c)
 {
   out <<"Chance"<<endl;
