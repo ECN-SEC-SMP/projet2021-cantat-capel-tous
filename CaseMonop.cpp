@@ -25,10 +25,10 @@ CaseMonop::~CaseMonop()
   
 }
 
-void CaseMonop::affiche() const
-{
-   cout <<"CM"<<endl;
-}
+ void CaseMonop::affiche() const
+ {
+    cout <<"CM"<<endl;
+ }
 
 
 

@@ -25,8 +25,8 @@ Plateau::Plateau()
 
 Plateau::~Plateau()
 {
-  for (int i = 0; i < _joueurs.size(); i++) delete _joueurs[i];
-  for (int i = 0; i < 40; i++) delete _plateau[i];
+  // for (int i = 0; i < _joueurs.size(); i++) delete _joueurs[i];
+  // for (int i = 0; i < 40; i++) delete _plateau[i];
 }
 
 
