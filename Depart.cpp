@@ -27,8 +27,9 @@ Depart::~Depart()
 
 void Depart::affiche() const
 {
- cout << *this << endl;
+   cout << *this <<endl;
 }
+
 
  ostream& operator<<(ostream& out,  Depart const& c)
 {
