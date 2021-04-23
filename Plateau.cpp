@@ -48,7 +48,7 @@ void Plateau::Affiche()
   {
     if (this->_plateau[i] != nullptr)
     {
-      cout << "ICI" <<endl;
+      //cout << *_plateau[i] <<endl;
      _plateau[i]->affiche(); //méthode réalisée par Sacha
     }
   }
@@ -69,88 +69,87 @@ void Plateau::initPlateau()
   //déclaration des (40) cases dans le vecteur plateau
   //this->_plateau[0] =  new Depart();
 
-  //Depart depart = Depart();
-  Gare depart = Gare("GDN", 3000);
 
-  _plateau[0] = &depart;
-  Constructible BDB = Constructible("Boulevard de Belleville", 600);
-  _plateau[1] = &BDB;
-  Chance chance1 = Chance();
-  _plateau[2] = &chance1;
-  Constructible RL = Constructible("Rue Lecourbe", 450);
-  _plateau[3] = &RL;
-  Chance chance2 = Chance();
-  _plateau[4] = &chance2;
-  Gare GM = Gare("Gare Montparnasse", 1500);
-  _plateau[5] = &GM;
-  Constructible RDV = Constructible("Rue de Vaugirard", 400);
-  _plateau[6] = &RDV;
-  Chance chance3 = Chance();
-  _plateau[7] = &chance3;
-  Constructible RDC = Constructible("Rue des Courcelles", 500);
-  _plateau[8] = &RDC;
-  Constructible ADLR = Constructible("Avenue de la République", 500);
-  _plateau[9] = &ADLR;
-  Prison prison = Prison();
-  _plateau[10] = &prison;
-  Constructible BDLV = Constructible("Boulevard de la Vilette", 700);
-  _plateau[11] = &BDLV;
-  Chance chance4 = Chance();
-  _plateau[12] = &chance4;  
-  Constructible ADN = Constructible("Avenue de Neuilly", 400);
-  _plateau[13] = &ADN;
-  Constructible RDP = Constructible("Rue de Paradis", 450);
-  _plateau[14] = &RDP;
-  Gare GDL = Gare("Gare de Lyon", 1200);
-  _plateau[15] = &GDL;
-  Constructible AM = Constructible("Avenue Mozart", 600);
-  _plateau[16] = &AM;
-  Chance chance5 = Chance();
-  _plateau[17] = &chance5;
-  Constructible BSM = Constructible("Boulevard Saint-Michel", 500);
-  _plateau[18] = &BSM;
-  Constructible PP = Constructible("Place Pigale", 650);
-  _plateau[19] = &PP;
-  Chance chance6 = Chance();
-  _plateau[20] = &chance6;
-  Constructible AMN = Constructible("Avenue Matignon", 550);
-  _plateau[21] = &AMN;
-  Chance chance7 = Chance();
-  _plateau[22] = &chance7;
-  Constructible BMS = Constructible("Boulevard Malsherbes", 450);
-  _plateau[23] = &BMS;
-  Constructible AHM = Constructible("Avenue Henri-Martin", 400);
-  _plateau[24] = &BMS;
-  Gare GDN = Gare("Gare du Nord", 1400);
-  _plateau[25] = &GDN;
-  Constructible FSH = Constructible("Faubourg Saint-Honoré", 700);
-  _plateau[26] = &FSH;
-  Constructible PDLB = Constructible("Place de la Bourse", 500);
-  _plateau[27] = &PDLB;
-  Chance chance8 = Chance();
-  _plateau[28] = &chance8;
-  Constructible RLF = Constructible("Rue La Fayelle", 300);
-  _plateau[29] = &RLF;
-  Prison prison2 = Prison();
-  _plateau[30] = &prison2;
-  Constructible ADB = Constructible("Avenue de Breteuille", 400);
-  _plateau[31] = &ADB;
-  Constructible AR = Constructible("Avenue Roch", 400);
-  _plateau[32] = &AR;
-  Chance chance9 = Chance();
-  _plateau[33] = &chance9;
-  Constructible BDC = Constructible("Boulevard des Capucines", 500);
-  _plateau[34] = &BDC;
-  Gare GSL = Gare("Gare Saint-Lazare", 1300);
-  _plateau[35] = &GSL;
-  Chance chance10 = Chance();
-  _plateau[36] = &chance10;
-  Constructible ADCE = Constructible("Avenue des Champs-Elysée", 800);
-  _plateau[37] = &ADCE;
-  Chance chance11  = Chance();
-  _plateau[38] = &chance11;
-  Constructible RDLP = Constructible("Rue de la Paix", 650);
-  _plateau[39] = &RDLP;
+  Depart *depart = new Depart();
+  _plateau[0] = depart;
+  Constructible *BDB = new Constructible("Boulevard de Belleville", 600);
+  _plateau[1] = BDB;
+  Chance *chance1 = new Chance();
+  _plateau[2] = chance1;
+  Constructible *RL = new Constructible("Rue Lecourbe", 450);
+  _plateau[3] = RL;
+  Chance *chance2 = new Chance();
+  _plateau[4] = chance2;
+  Gare *GM =new Gare("Gare Montparnasse", 1500);
+  _plateau[5] = GM;
+  Constructible *RDV = new Constructible("Rue de Vaugirard", 400);
+  _plateau[6] = RDV;
+  Chance *chance3 = new Chance();
+  _plateau[7] = chance3;
+  Constructible *RDC =new Constructible("Rue des Courcelles", 500);
+  _plateau[8] = RDC;
+  Constructible *ADLR =new Constructible("Avenue de la République", 500);
+  _plateau[9] = ADLR;
+  Prison *prison = new Prison();
+  _plateau[10] = prison;
+  Constructible *BDLV =new Constructible("Boulevard de la Vilette", 700);
+  _plateau[11] = BDLV;
+  Chance *chance4 =new Chance();
+  _plateau[12] = chance4;  
+  Constructible *ADN = new Constructible("Avenue de Neuilly", 400);
+  _plateau[13] = ADN;
+  Constructible *RDP = new Constructible("Rue de Paradis", 450);
+  _plateau[14] = RDP;
+  Gare *GDL = new Gare("Gare de Lyon", 1200);
+  _plateau[15] = GDL;
+  Constructible *AM = new Constructible("Avenue Mozart", 600);
+  _plateau[16] = AM;
+  Chance *chance5 = new Chance();
+  _plateau[17] = chance5;
+  Constructible *BSM =new Constructible("Boulevard Saint-Michel", 500);
+  _plateau[18] = BSM;
+  Constructible *PP =new Constructible("Place Pigale", 650);
+  _plateau[19] = PP;
+  Chance *chance6 = new Chance();
+  _plateau[20] = chance6;
+  Constructible *AMN = new Constructible("Avenue Matignon", 550);
+  _plateau[21] = AMN;
+  Chance *chance7 = new Chance();
+  _plateau[22] = chance7;
+  Constructible *BMS =new Constructible("Boulevard Malsherbes", 450);
+  _plateau[23] = BMS;
+  Constructible *AHM =new Constructible("Avenue Henri-Martin", 400);
+  _plateau[24] = BMS;
+  Gare *GDN =new Gare("Gare du Nord", 1400);
+  _plateau[25] = GDN;
+  Constructible *FSH =new Constructible("Faubourg Saint-Honoré", 700);
+  _plateau[26] = FSH;
+  Constructible *PDLB =new Constructible("Place de la Bourse", 500);
+  _plateau[27] = PDLB;
+  Chance *chance8 =new Chance();
+  _plateau[28] = chance8;
+  Constructible *RLF =new Constructible("Rue La Fayelle", 300);
+  _plateau[29] = RLF;
+  Prison *prison2 =new Prison();
+  _plateau[30] = prison2;
+  Constructible *ADB =new Constructible("Avenue de Breteuille", 400);
+  _plateau[31] = ADB;
+  Constructible *AR = new Constructible("Avenue Roch", 400);
+  _plateau[32] = AR;
+  Chance *chance9 =new Chance();
+  _plateau[33] = chance9;
+  Constructible *BDC =new Constructible("Boulevard des Capucines", 500);
+  _plateau[34] = BDC;
+  Gare *GSL =new Gare("Gare Saint-Lazare", 1300);
+  _plateau[35] = GSL;
+  Chance *chance10 =new Chance();
+  _plateau[36] = chance10;
+  Constructible *ADCE =new Constructible("Avenue des Champs-Elysée", 800);
+  _plateau[37] = ADCE;
+  Chance *chance11  =new Chance();
+  _plateau[38] = chance11;
+  Constructible *RDLP =new Constructible("Rue de la Paix", 650);
+  _plateau[39] = RDLP;
   //On initialise les joueurs et créer le vecteurs _joueurs
   int nbJoueurs;
   cout<<"Veuillez saisir le nombre de joueurs voulu : " << endl;
@@ -164,7 +163,7 @@ void Plateau::initPlateau()
   } 
   cout << "here";
   //On affiche les cases du tableau
-  Affiche();
+ Affiche();
 }
 
 
