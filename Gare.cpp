@@ -31,9 +31,9 @@ void Gare::affiche() const
    cout << *this <<endl;
 }
 
-void Gare::isLoyer() const
+int Gare::isLoyer() const
 {
-  return 2500*getNbGare(m_Proprio);
+  return 2500*m_Proprio.NbGare();
 }
 
 

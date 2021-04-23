@@ -32,9 +32,9 @@ void Achetable::affiche() const
  cout <<"achetable"<<endl;
 }
 
-void Achetable::isLoyer() const
+int Achetable:: isLoyer() const
 {
- 
+ return 0;
 }
 
 

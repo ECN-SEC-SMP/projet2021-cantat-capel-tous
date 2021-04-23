@@ -28,9 +28,9 @@ void Constructible::affiche() const
  cout << *this << endl;
 }
 
-void Constructible::isLoyer() const
+int Constructible::isLoyer() const
 {
- 
+ return 0;
 }
 
 

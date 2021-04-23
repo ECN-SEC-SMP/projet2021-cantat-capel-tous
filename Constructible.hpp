@@ -13,7 +13,7 @@ class Constructible : public Achetable
     ~Constructible();
 
     virtual void affiche() const override;
-    virtual void isLoyer() const override;
+    virtual int isLoyer() const override;
     void acheteMaison(int nombre);
     void acheteHotel(int nombre);
     
