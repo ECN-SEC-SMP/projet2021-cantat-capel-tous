@@ -1,32 +1,33 @@
-/**
- * @file        NonAchetable.hpp
- * @brief       Contient la déclaration de la classe Achetable
- * @details     La classe Achetable est
- * @author      Sacha CANTAT
- * @date        17/04/21
- */
+#ifndef DEF_CONSTRUCTIBLE
+#define DEF_CONSTRUCTIBLE
 
-#ifndef DEF_NONACHETABLE
-#define DEF_NONACHETABLE
+#include "Achetable.hpp"
+//#include "Joueur.h"
 
-#include "CaseMonop.hpp"
-#include "Joueur.hpp"
-
-class NonAchetable : public CaseMonop
+class Constructible : public Achetable
 {
     public:
-    NonAchetable();
-    ~NonAchetable();
 
-    virtual void affiche() const;
+    Constructible();
+    Constructible(std::string nom, int prix);
+    ~Constructible();
 
-    protected:
-
+    virtual void affiche() const override;
+    void acheteMaison(int nombre);
+    void acheteHotel(int nombre);
     
+    int getNbMaison() const;
+    int getNbHotel() const;
+    // bool isAchetable() const;
+
+    private:
+
+    int m_hotel= 0;
+    int m_maison= 0;
 
 
 };
 
-ostream& operator<<(ostream& out,  NonAchetable const& c);
 
+ostream& operator<<(ostream&, Constructible const&);
 #endif

@@ -26,6 +26,7 @@ Gare::~Gare()
 }
 
 void Gare::affiche() const
+
  {
    cout << *this <<endl;
 }

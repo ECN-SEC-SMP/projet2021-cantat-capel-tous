@@ -24,20 +24,16 @@ class Achetable : public CaseMonop
     string getProprioName() const;
     Joueur getProprio() const;
     bool acheter(Joueur j);
-    std::string getNom() const;
-    int getId() const;
 
     virtual void affiche() const;
 
+
     protected:
 
-    
-    int m_id;
     int m_prix;
     bool m_stateProprio = 0;
     Joueur m_Proprio;
-    std::string m_nom;
-    
+
 
 
 };

@@ -17,8 +17,7 @@ class Depart : public NonAchetable
     public:
     Depart();
     ~Depart();
-
-  void affiche() const override;
+    virtual void affiche() const override;
 
    
     

@@ -27,7 +27,7 @@ Prison::~Prison()
 
 void Prison::affiche() const
 {
-   cout << *this <<endl;
+ cout << *this << endl;
 }
 
  ostream& operator<<(ostream& out,  Prison const& c)

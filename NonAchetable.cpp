@@ -17,13 +17,13 @@
 using namespace std;
 
 
-NonAchetable::NonAchetable(): CaseMonop()
+NonAchetable::NonAchetable()
+{
+
+}
+
+void NonAchetable::affiche() const
 {
 
 }
 NonAchetable::~NonAchetable(){}
-
-void NonAchetable::affiche() const
-{
- cout <<"achetable"<<endl;
-}

@@ -16,7 +16,8 @@ class Prison : public NonAchetable
     public:
     Prison();
     ~Prison();
-void affiche() const override;
+    virtual void affiche() const override;
+
    
     
     

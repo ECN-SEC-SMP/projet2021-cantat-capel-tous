@@ -48,7 +48,6 @@ void Plateau::Affiche()
   {
     if (this->_plateau[i] != nullptr)
     {
-      //cout << *_plateau[i] <<endl;
      _plateau[i]->affiche(); //méthode réalisée par Sacha
     }
   }
@@ -68,8 +67,6 @@ void Plateau::initPlateau()
   _tour = 0;
   //déclaration des (40) cases dans le vecteur plateau
   //this->_plateau[0] =  new Depart();
-
-
   Depart *depart = new Depart();
   _plateau[0] = depart;
   Constructible *BDB = new Constructible("Boulevard de Belleville", 600);
@@ -150,6 +147,7 @@ void Plateau::initPlateau()
   _plateau[38] = chance11;
   Constructible *RDLP =new Constructible("Rue de la Paix", 650);
   _plateau[39] = RDLP;
+
   //On initialise les joueurs et créer le vecteurs _joueurs
   int nbJoueurs;
   cout<<"Veuillez saisir le nombre de joueurs voulu : " << endl;

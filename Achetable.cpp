@@ -16,24 +16,23 @@
 using namespace std;
 
 
-Achetable::Achetable(string nom, int prix): m_nom(nom), m_prix(prix)
+Achetable::Achetable(string nom, int prix): CaseMonop(nom), m_prix(prix)
 {
     Joueur j = Joueur(string());
     this->m_Proprio = j;
 }
 
-Achetable::~Achetable(){}
 
- string Achetable::getNom() const
- {
-   return m_nom;
- }
+Achetable::~Achetable()
+{
+  
+}
+void Achetable::affiche() const
+{
+ cout <<"achetable"<<endl;
+}
 
-int Achetable::getId() const
- {
-    
-  return m_id;
- }
+
 
 int Achetable::getPrix() const
 {
@@ -54,11 +53,6 @@ bool Achetable::acheter(Joueur j)
 {
   if (j.prelevement(m_prix)) return true;
   else return false; // Renvoit 0 si pas assez d'argent chez le joeur
-}
-
-void Achetable::affiche() const
-{
-
 }
 
 bool Achetable::haveProprio() const

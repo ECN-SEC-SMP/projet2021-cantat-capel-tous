@@ -10,13 +10,18 @@ class CaseMonop
     public:
 
     
-    virtual ~CaseMonop();
+    CaseMonop();
+    CaseMonop(std::string nom); //Constructeur
+    ~CaseMonop();
     
     virtual void affiche() const;
     std::string getNom() const;
     int getId() const;
     
     protected:
+
+    std::string m_nom;
+    int m_id;
     
 };
 
