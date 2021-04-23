@@ -30,6 +30,11 @@ CaseMonop::~CaseMonop()
     cout <<"CM"<<endl;
  }
 
+  void CaseMonop::isLoyer() const
+ {
+    cout <<"CM"<<endl;
+ }
+
 
 
 

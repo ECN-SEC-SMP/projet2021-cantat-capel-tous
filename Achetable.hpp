@@ -26,6 +26,7 @@ class Achetable : public CaseMonop
     bool acheter(Joueur j);
 
     virtual void affiche() const;
+    virtual void isLoyer() const;
 
 
     protected:

@@ -18,6 +18,7 @@ class Gare : public Achetable
     ~Gare();
 
    void affiche() const override;
+   void isLoyer() const override;
 
 
 

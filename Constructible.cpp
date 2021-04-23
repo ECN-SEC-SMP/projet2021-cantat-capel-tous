@@ -28,6 +28,10 @@ void Constructible::affiche() const
  cout << *this << endl;
 }
 
+void Constructible::isLoyer() const
+{
+ 
+}
 
 
 

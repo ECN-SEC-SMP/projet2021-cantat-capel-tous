@@ -32,6 +32,11 @@ void Achetable::affiche() const
  cout <<"achetable"<<endl;
 }
 
+void Achetable::isLoyer() const
+{
+ 
+}
+
 
 
 int Achetable::getPrix() const

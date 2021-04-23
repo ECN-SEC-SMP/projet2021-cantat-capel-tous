@@ -28,6 +28,8 @@ Joueur::Joueur(string s) : nom(s)
     this->position=0;
 }
 
+
+
 ///Asseceurs
 int Joueur::getFortune() const{
   return fortune;
@@ -64,6 +66,12 @@ bool Joueur::prelevement(int x){
     i=true;
   }
   return i;
+}
+
+//Renvoie le nombre de gare
+int Joueur::NbGare() const
+{
+  return 0;
 }
 
 //lancé de dé

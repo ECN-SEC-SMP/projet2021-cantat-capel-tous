@@ -37,6 +37,7 @@ public :
   bool prelevement(int somme_du);
   int lanceDe();
   void tourDeJeu();
+  int NbGare() const;
 
 };
 
