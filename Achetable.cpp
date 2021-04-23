@@ -56,13 +56,21 @@ string Achetable::getProprioName() const
 
 bool Achetable::acheter(Joueur j)
 {
-  if (j.prelevement(m_prix)) return true;
+  if (j.prelevement(m_prix))
+  {
+    m_Proprio = j;
+    return true; //REnvoit 1 si achat effectué
+  }
   else return false; // Renvoit 0 si pas assez d'argent chez le joeur
 }
 
 bool Achetable::haveProprio() const
 {
-  return m_stateProprio;
+  if (m_Proprio.getNom()==string())
+  {
+    return false;
+  }
+  else return true;
 }
 
 

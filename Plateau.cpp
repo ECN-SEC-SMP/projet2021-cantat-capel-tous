@@ -157,7 +157,7 @@ void Plateau::initPlateau()
   for(int y=0; y<=nbJoueurs; y++)
   {
     cin>> Pseudo;
-    this->_joueurs.push_back(new Joueur(Pseudo, y, 0, this));
+    this->_joueurs.push_back(new Joueur(Pseudo, y, 0));//, this));
   } 
   cout << "here";
   //On affiche les cases du tableau

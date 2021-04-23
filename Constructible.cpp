@@ -34,8 +34,6 @@ int Constructible::isLoyer() const
   {
     int a = 8; //Coeff pour maison
     int b = 2; //Coeff pour hotel
-    cout << "a: "<< a<< ", b: "<<b<<endl;
-    cout << "Maison: "<< m_maison<< ", Hotel: "<<m_hotel<<endl;
     return m_loyer * a^m_maison * b^m_hotel;
   }
 
@@ -114,8 +112,8 @@ int Constructible::getNbHotel() const
         if (nbHotel > 1) out << "s , ";
         else out << ", ";
       }
-      //int loyer = c.getLoyer()
-      out <<"loyer = XXXXX" << endl; //On affiche le loyer
+   
+      out <<"loyer = " << c.isLoyer() <<endl; //On affiche le loyer
     }
 
     return out;

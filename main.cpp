@@ -21,9 +21,15 @@ using namespace std;
 
 int main() {
 
+Joueur j1("sacha",1,3000);
+
 Constructible *CaseDep = new Constructible("GDN", 500, 300);
 CaseDep->affiche();
-cout << CaseDep->isLoyer()<<endl;;
+cout <<"Achat" <<endl;
+CaseDep->acheter(j1);
+CaseDep->affiche();
+cout << CaseDep->getProprioName()<<endl;
+cout << CaseDep->isLoyer()<<endl;
 
 //cout <<*CaseDep <<endl;
 
