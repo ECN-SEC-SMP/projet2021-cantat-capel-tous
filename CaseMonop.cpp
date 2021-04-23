@@ -32,7 +32,7 @@ CaseMonop::~CaseMonop()
 
  bool CaseMonop::isAchetable() const
  {
-    return false;
+   
  }
 
   int CaseMonop::isLoyer() const

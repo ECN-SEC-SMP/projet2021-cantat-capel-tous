@@ -22,38 +22,37 @@ Achetable::Achetable(string nom, int prix): CaseMonop(nom), m_prix(prix)
     this->m_Proprio = j;
 }
 
-
 Achetable::~Achetable()
 {
   
 }
-void Achetable::affiche() const
-{
- cout <<"achetable"<<endl;
-}
-
-int Achetable:: isLoyer() const
-{
- return 0;
-}
 
 
 
+//Accesseur
+
+//Retourn le prix du bien
 int Achetable::getPrix() const
 {
   return m_prix;
 }
 
+//Retourne le joueur propriétaire
 Joueur Achetable::getProprio() const
 {
   return m_Proprio;
 }
 
+//Retourne le nom du propriétaire
 string Achetable::getProprioName() const
 {
   return m_Proprio.getNom();
 }
 
+
+//Methode
+
+//Le joueur j achete la case et en deviens propriétaire si il a assez d'argent, sinon renvoie FALSE.
 bool Achetable::acheter(Joueur j)
 {
   if (j.prelevement(m_prix))
@@ -64,6 +63,7 @@ bool Achetable::acheter(Joueur j)
   else return false; // Renvoit 0 si pas assez d'argent chez le joeur
 }
 
+//Retourne TRUE si la case à deja un propriétaire
 bool Achetable::haveProprio() const
 {
   if (m_Proprio.getNom()==string())
@@ -73,11 +73,22 @@ bool Achetable::haveProprio() const
   else return true;
 }
 
+//Methode qui prennent sens plus bas
 bool Achetable::isAchetable() const
 {
   return true;
 }
 
+
+void Achetable::affiche() const
+{
+
+}
+
+int Achetable:: isLoyer() const
+{
+ return 0;
+}
 
 
  ostream& operator<<(ostream& out,  Achetable const& a)

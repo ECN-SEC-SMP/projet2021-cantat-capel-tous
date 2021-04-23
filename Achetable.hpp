@@ -15,17 +15,16 @@
 class Achetable : public CaseMonop
 {
     public:
-    Achetable();
+ 
     Achetable(std::string nom, int prix);
     ~Achetable();
-    int isProprio() const;
     int getPrix() const;
     bool haveProprio() const;
     string getProprioName() const;
     Joueur getProprio() const;
     bool acheter(Joueur j);
+    
     virtual bool isAchetable() const override;
-
     virtual void affiche() const;
     virtual int isLoyer() const;
 
