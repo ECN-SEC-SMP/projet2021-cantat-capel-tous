@@ -16,7 +16,8 @@ class Chance : public NonAchetable
     public:
     Chance();
     ~Chance();
-    virtual void affiche() const override;
+
+  void affiche() const override;
    
     
     
