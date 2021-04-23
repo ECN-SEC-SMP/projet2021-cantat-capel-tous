@@ -16,7 +16,9 @@ class Gare : public Achetable
     public:
     Gare(std::string nom, int prix);
     ~Gare();
-   virtual void affiche() const override;
+    //virtual void affiche() const override;
+   void affiche() const override;
+
 
 
     // bool isAchetable() const;
