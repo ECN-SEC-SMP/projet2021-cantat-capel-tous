@@ -35,6 +35,11 @@ int Chance::isLoyer() const
   return 0;
 }
 
+bool Chance::isAchetable() const
+{
+  return false;
+}
+
  ostream& operator<<(ostream& out,  Chance const& c)
 {
   out <<"Chance"<<endl;

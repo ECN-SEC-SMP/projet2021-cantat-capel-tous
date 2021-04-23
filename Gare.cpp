@@ -36,6 +36,11 @@ int Gare::isLoyer() const
   return 2500*m_Proprio.NbGare(); //Renvoi 2500 * le nombre de gare
 }
 
+bool Gare::isAchetable() const
+{
+  return true;
+}
+
 
 // bool Gare::isAchetable() const
 // {

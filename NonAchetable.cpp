@@ -32,3 +32,8 @@ int NonAchetable::isLoyer() const
 {
   return 0;
 }
+
+bool NonAchetable::isAchetable() const
+ {
+    return 0;
+ }

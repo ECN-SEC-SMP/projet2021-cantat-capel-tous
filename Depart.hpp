@@ -19,6 +19,7 @@ class Depart : public NonAchetable
     ~Depart();
     virtual void affiche() const override;
     virtual int isLoyer() const override;
+    bool isAchetable() const override;
 
    
     

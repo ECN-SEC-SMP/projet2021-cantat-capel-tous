@@ -30,6 +30,11 @@ CaseMonop::~CaseMonop()
     cout <<"CM"<<endl;
  }
 
+ bool CaseMonop::isAchetable() const
+ {
+    return false;
+ }
+
   int CaseMonop::isLoyer() const
  {
     return 0;

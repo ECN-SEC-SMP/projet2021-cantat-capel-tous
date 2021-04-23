@@ -7,7 +7,15 @@ using namespace std;
 
 
 ///Contructeur 
-Joueur::Joueur(string n,int id, int position) {//, Plateau* plat){
+Joueur::Joueur(string n,int id, int position, Plateau* plat){
+  this->nom=n;
+  this->fortune=10000;
+  this->position=position;
+  this->plateau=plat;
+}
+
+///Contructeur 
+Joueur::Joueur(string n,int id, int position) {
   this->nom=n;
   this->fortune=10000;
   this->position=position;

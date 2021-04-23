@@ -16,6 +16,7 @@ class CaseMonop
     
     virtual void affiche() const;
     virtual int isLoyer() const;
+    virtual bool isAchetable() const;
     std::string getNom() const;
     int getId() const;
     

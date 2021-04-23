@@ -42,6 +42,11 @@ int Constructible::isLoyer() const
 
 }
 
+bool Constructible::isAchetable() const
+{
+  return true;
+}
+
 
 
 void Constructible::acheteMaison(int nombreMaison)

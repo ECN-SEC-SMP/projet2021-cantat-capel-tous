@@ -35,6 +35,11 @@ int Prison::isLoyer() const
   return 0;
 }
 
+bool Prison::isAchetable() const
+{
+  return false;
+}
+
  ostream& operator<<(ostream& out,  Prison const& c)
 {
   out <<"Prison"<<endl;

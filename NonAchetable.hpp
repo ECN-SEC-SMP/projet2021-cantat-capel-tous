@@ -21,6 +21,7 @@ class NonAchetable : public CaseMonop
 
    virtual void affiche() const;
    virtual int isLoyer() const;
+   bool isAchetable() const override;
     
 
 

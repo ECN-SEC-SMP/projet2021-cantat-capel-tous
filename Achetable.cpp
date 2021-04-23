@@ -73,6 +73,11 @@ bool Achetable::haveProprio() const
   else return true;
 }
 
+bool Achetable::isAchetable() const
+{
+  return true;
+}
+
 
 
  ostream& operator<<(ostream& out,  Achetable const& a)

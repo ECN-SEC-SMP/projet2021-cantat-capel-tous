@@ -22,7 +22,7 @@ class Gare : public Achetable
 
 
 
-    // bool isAchetable() const;
+  bool isAchetable() const override;
     
     
     private:

@@ -35,6 +35,11 @@ int Depart::isLoyer() const
   return 0;
 }
 
+bool Depart::isAchetable() const
+{
+  return false;
+}
+
  ostream& operator<<(ostream& out,  Depart const& c)
 {
   out <<"Depart"<<endl;

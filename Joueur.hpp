@@ -21,7 +21,8 @@ private :
 
 public :
   ///contructeur
-  Joueur(string n,int id, int position);//, Plateau* plat);
+  Joueur(string n,int id, int position, Plateau* plat);
+  Joueur(string n,int id, int position);
   ///contructeur 2
   Joueur(string s);
   Joueur();
