@@ -16,11 +16,22 @@
 using namespace std;
 
 
-Achetable::Achetable(string nom, int prix): CaseMonop(nom), m_prix(prix)
+Achetable::Achetable(string nom, int prix): m_nom(nom), m_prix(prix)
 {
     Joueur j = Joueur(string());
     this->m_Proprio = j;
 }
+
+ string Achetable::getNom() const
+ {
+   return m_nom;
+ }
+
+int Achetable::getId() const
+ {
+    
+  return m_id;
+ }
 
 int Achetable::getPrix() const
 {

@@ -7,8 +7,7 @@ main.out: main.o Joueur.o CaseMonop.o Achetable.o NonAchetable.o Constructible.o
 
 Achetable.o: Achetable.cpp Achetable.hpp CaseMonop.hpp Joueur.hpp
 	g++ -c Achetable.cpp
-CaseMonop.o: CaseMonop.cpp CaseMonop.hpp
-	g++ -c CaseMonop.cpp
+
 Constructible.o: Constructible.cpp Constructible.hpp
 	g++ -c Constructible.cpp
 Gare.o: Gare.cpp Gare.hpp
