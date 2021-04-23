@@ -9,7 +9,7 @@ class Constructible : public Achetable
     public:
 
     Constructible();
-    Constructible(std::string nom, int prix);
+    Constructible(std::string nom, int prix, int loyer);
     ~Constructible();
 
     virtual void affiche() const override;
@@ -25,6 +25,7 @@ class Constructible : public Achetable
 
     int m_hotel= 0;
     int m_maison= 0;
+    int m_loyer=0;
 
 
 };

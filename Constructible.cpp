@@ -13,7 +13,7 @@
 
 using namespace std;
 
-Constructible::Constructible(string nom, int prix) : Achetable(nom,prix)
+Constructible::Constructible(string nom, int prix, int loyer) : Achetable(nom,prix), m_loyer(loyer)
 {
   
 }
