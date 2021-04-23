@@ -30,9 +30,17 @@ void Constructible::affiche() const
 
 int Constructible::isLoyer() const
 {
-  int a = 8; //Coeff pour maison
-  int b = 2; //Coeff pour hotel
-  return m_loyer * a^m_maison * b^m_hotel;
+  if(this->haveProprio())
+  {
+    int a = 8; //Coeff pour maison
+    int b = 2; //Coeff pour hotel
+    cout << "a: "<< a<< ", b: "<<b<<endl;
+    cout << "Maison: "<< m_maison<< ", Hotel: "<<m_hotel<<endl;
+    return m_loyer * a^m_maison * b^m_hotel;
+  }
+
+  else return 0;
+  
 
 }
 

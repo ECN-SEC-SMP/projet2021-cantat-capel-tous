@@ -7,7 +7,7 @@
 
 //#include "Achetable.hpp"
 //#include "CaseMonop.hpp"
-//#include "Constructible.hpp"
+#include "Constructible.hpp"
 //#include "Gare.hpp"
 #include "Plateau.hpp"
 #include "Depart.hpp"
@@ -21,11 +21,14 @@ using namespace std;
 
 int main() {
 
-//Gare *CaseDep = new Gare("GDN", 500);
+Constructible *CaseDep = new Constructible("GDN", 500, 300);
+CaseDep->affiche();
+cout << CaseDep->isLoyer()<<endl;;
+
 //cout <<*CaseDep <<endl;
 
 Plateau plat = Plateau();
-plat.initPlateau();
+//plat.initPlateau();
 
 
 
