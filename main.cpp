@@ -48,7 +48,7 @@ cout << "Chance est achetable ? "<< chanceCase->isAchetable() << endl;
 //cout <<*CaseDep <<endl;
 
 Plateau plat = Plateau();
-//plat.initPlateau();
+plat.initPlateau();
 
 
 
