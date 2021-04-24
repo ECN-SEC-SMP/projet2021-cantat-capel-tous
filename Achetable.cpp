@@ -16,6 +16,14 @@
 using namespace std;
 
 
+
+
+/**
+ * \fn Achetable(string nom, int prix)
+ * \brief    Constructeur de Achetable
+ * \param    nom          nom de la case
+ * \param    prix          prix d'achat de la case
+ */
 Achetable::Achetable(string nom, int prix): CaseMonop(nom), m_prix(prix)
 {
     Joueur j = Joueur(string());
@@ -27,23 +35,33 @@ Achetable::~Achetable()
   
 }
 
+//Accesseur : 
 
-
-//Accesseur
-
-//Retourn le prix du bien
+/**
+ * \fn getPrix() const
+ * \brief    Retorune le prix d'achat de la case
+ * \return    m_prix      l'attribut m_prix
+ */
 int Achetable::getPrix() const
 {
   return m_prix;
 }
 
-//Retourne le joueur propriétaire
+/**
+ * \fn getProprio() const
+ * \brief    Retorune l'objet Joueur propriétaire de la case
+ * \return    m_Proprio      l'attribut m_Proprio
+ */
 Joueur Achetable::getProprio() const
 {
   return m_Proprio;
 }
 
-//Retourne le nom du propriétaire
+/**
+ * \fn getProprioName() const
+ * \brief    Retourne le nom du propriétaire
+ * \return    m_Proprio.getNom()      le nom du propriétaire
+ */
 string Achetable::getProprioName() const
 {
   return m_Proprio.getNom();
@@ -52,10 +70,17 @@ string Achetable::getProprioName() const
 
 //Methode
 
-//Le joueur j achete la case et en deviens propriétaire si il a assez d'argent, sinon renvoie FALSE.
+/**
+ * \fn acheter(Joueur j)
+ * \brief    un Joueur achete la case
+ * \detail Possible si le joueur dispose d'assez d'argent et si aucun propriétaire ne possède déja cette case.
+ * \param    j          Objet Joeur souhaitant acquérir la case
+ * \return    true       La case a été achetée
+ * \return    false      La case  n'a pas été achetée
+ */
 bool Achetable::acheter(Joueur j)
 {
-  if (j.prelevement(m_prix))
+  if (j.prelevement(m_prix) && this->haveProprio() == 0)
   {
     m_Proprio = j;
     return true; //REnvoit 1 si achat effectué
@@ -63,7 +88,12 @@ bool Achetable::acheter(Joueur j)
   else return false; // Renvoit 0 si pas assez d'argent chez le joeur
 }
 
-//Retourne TRUE si la case à deja un propriétaire
+/**
+ * \fn haveProprio() const
+ * \brief    Regarde si la case à un propriétare ou non
+ * \return    true       La case a un propriétaire
+ * \return    false      La case  n'a pas de propriétaire
+ */
 bool Achetable::haveProprio() const
 {
   if (m_Proprio.getNom()==string())

@@ -16,16 +16,16 @@
 
 using namespace std;
 
-
+/**
+ * \fn NonAchetable()
+ * \brief    Constructeur de case NonAchetable
+ */
 NonAchetable::NonAchetable()
 {
 
 }
 
-void NonAchetable::affiche() const
-{
 
-}
 NonAchetable::~NonAchetable(){}
 
 int NonAchetable::isLoyer() const
@@ -37,3 +37,7 @@ bool NonAchetable::isAchetable() const
  {
     return 0;
  }
+ void NonAchetable::affiche() const
+{
+
+}
