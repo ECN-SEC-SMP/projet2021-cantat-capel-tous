@@ -26,12 +26,21 @@ Joueur j1("sacha",1,3000);
 
 Constructible *CaseDep = new Constructible("GDN", 500, 300);
 Chance *chanceCase = new Chance();
+
 CaseDep->affiche();
 cout <<"Achat" <<endl;
 CaseDep->acheter(j1);
 CaseDep->affiche();
+cout << "Achat de 2 maison" <<endl;
+CaseDep->acheteMaison(2);
+CaseDep->affiche();
+CaseDep->acheteMaison(2);
+CaseDep->affiche();
+CaseDep->acheteHotel(1);
+CaseDep->affiche();
+
 cout << CaseDep->getProprioName()<<endl;
-cout << CaseDep->isLoyer()<<endl;
+
 
 cout << "Construction est achetable ? "<< CaseDep->isAchetable() << endl;
 cout << "Chance est achetable ? "<< chanceCase->isAchetable() << endl;

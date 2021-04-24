@@ -129,6 +129,7 @@ bool Constructible::acheteHotel(int nombreHotel)
  {
    m_hotel++;
    m_Proprio.prelevement(500);
+   m_maison =0;
    return true;
  }
  return false;
