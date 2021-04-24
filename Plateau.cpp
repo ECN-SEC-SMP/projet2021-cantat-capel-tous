@@ -154,7 +154,7 @@ void Plateau::initPlateau()
   cin>>nbJoueurs;
   string Pseudo;
   cout<<"Veuillez tour à tour rentrer votre pseudo : "<< endl;
-  for(int y=0; y<=nbJoueurs; y++)
+  for(int y=0; y<nbJoueurs; y++)
   {
     cin>> Pseudo;
     this->_joueurs.push_back(new Joueur(Pseudo, y, 0, this));
