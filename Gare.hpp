@@ -20,12 +20,9 @@ class Gare : public Achetable
    void affiche() const override;
    int isLoyer() const override;
 
-
-
-  bool isAchetable() const override;
+   bool isAchetable() const override;
     
-    
-    private:
+    protected:
 
 };
 

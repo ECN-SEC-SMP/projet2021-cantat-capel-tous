@@ -8,19 +8,18 @@ class Constructible : public Achetable
 {
     public:
 
-    Constructible();
     Constructible(std::string nom, int prix, int loyer);
     ~Constructible();
 
-    virtual void affiche() const override;
-    virtual int isLoyer() const override;
-    virtual bool isAchetable() const override;
+    int getNbMaison() const;
+    int getNbHotel() const;
+    
     void acheteMaison(int nombre);
     void acheteHotel(int nombre);
     
-    int getNbMaison() const;
-    int getNbHotel() const;
-    // bool isAchetable() const;
+    virtual void affiche() const override;
+    virtual int isLoyer() const override;
+    virtual bool isAchetable() const override;
 
     private:
 
