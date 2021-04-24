@@ -15,6 +15,12 @@
 
 using namespace std;
 
+/**
+ * \fn Gare(string nom, int prix)
+ * \brief    Constructeur d'une case Gare
+ * \param    nom         Nom de la gare
+ * \param    prix       prix d'achat de la gare
+ */
 Gare::Gare(string nom, int prix) : Achetable(nom,prix) 
 {
 
@@ -25,29 +31,37 @@ Gare::~Gare()
 
 }
 
+/**
+ * \fn affiche() const
+ * \brief    Affiche les informations de la gare
+ */
 void Gare::affiche() const
 
  {
    cout << *this <<endl;
 }
 
+/**
+ * \fn isLoyer() const
+ * \brief    calcule le loyer
+ * \return    loyer       loyer de la case
+ **/
 int Gare::isLoyer() const
 {
   return 2500*m_Proprio.NbGare(); //Renvoi 2500 * le nombre de gare
 }
 
+/**
+ * \fn isAchetable const
+ * \brief    Vérifie si la case est une case de type achetable
+ * \return true
+ */
 bool Gare::isAchetable() const
 {
   return true;
 }
 
-
-// bool Gare::isAchetable() const
-// {
-//   return true;
-// }
-
- ostream& operator<<(ostream& out,  Gare const& c)
+ostream& operator<<(ostream& out,  Gare const& c)
 {
   out <<  c.getNom() << " (coût : " << c.getPrix() << " ) - ";
   if(c.getProprioName() == string()) out << "sans propriétaire " <<endl; //Pas de propriétaire
@@ -58,19 +72,3 @@ bool Gare::isAchetable() const
   }
    return out;
 }
-
-
-
-
-// void CaseMonop::afficher(ostream &flux) const
-// {
-    
-//     if(isProprio != 0)
-//     {
-//       flux << m_nom << " (coût : " << this->m_prix << " ) propriétaire : " << m_proprio;
-//     }
-//     else
-//     {
-//       flux << m_nom << " (coût : " << m_prix << " ) - pas de propriétaire";
-//     }
-// }

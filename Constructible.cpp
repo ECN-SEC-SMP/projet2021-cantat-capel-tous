@@ -115,7 +115,6 @@ int Constructible::acheteMaison(int nombreMaison)
   
 }
 
-//REnvoit 1 si achat ok, 0 si déja un hotel (pas plus d'un hotel par terrain)
 /**
  * \fn acheteHotel(int nombreHotel)
  * \brief    Achète un hotel
