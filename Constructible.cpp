@@ -9,10 +9,30 @@
 #include <stdlib.h>
 #include "Achetable.hpp"
 #include "Constructible.hpp"
+#include "math.h"
 //#include "Joueur.h"
 
 using namespace std;
 
+#define PRIXMAISON 200;
+
+
+/**
+ * \fn Constructible(string nom, int prix, int loyer)
+ * \brief Constructeur d'une case Constructible avec un nom, un prix et un loyer
+ *
+ * \param nom 
+ * \param nom 
+ * \return Instance nouvelle allouée d'un objet de type Str_t ou NULL.
+ */
+
+ /**
+ * \fn Constructible(string nom, int prix, int loyer)
+ * \brief       Constructeur d'une case Constructible avec un nom, un prix et un loyer
+ * \param    nom          Nom de la rue
+ * \param    prix         Prix d'achat de la case
+ * \param    prix         Base de loyer sans maison ni hotel
+ */
 Constructible::Constructible(string nom, int prix, int loyer) : Achetable(nom,prix), m_loyer(loyer)
 {
   
@@ -23,25 +43,104 @@ Constructible::~Constructible()
   
 }
 
+/**
+ * \fn getNbMaison()() const
+ * \brief Vérifie si la case est une case de type achetable
+ * \return m_maison     Le nombre de maison de la case
+ */
+int Constructible::getNbMaison() const
+{
+  return m_maison;
+}
+
+/**
+ * \fn getNbHotel()() const
+ * \brief Vérifie si la case est une case de type achetable
+ * \return m_hotel     Le nombre d'hotel sur la case
+ */
+int Constructible::getNbHotel() const
+{
+  return m_hotel;
+}
+
+/**
+ * \fn affiche() const
+ * \brief Affiche les informations de la case
+ */
 void Constructible::affiche() const
 {
  cout << *this << endl;
 }
 
+/**
+ * \fn isLoyer() const
+ * \brief Calcule le loyer
+ * \return loyer
+ */
 int Constructible::isLoyer() const
 {
   if(this->haveProprio())
   {
     int a = 8; //Coeff pour maison
     int b = 2; //Coeff pour hotel
-    return m_loyer * a^m_maison * b^m_hotel;
+
+     a= pow(a,m_maison);
+     b= pow(b,m_hotel);
+    int loyer = m_loyer * a * b;
+    return loyer;
   }
 
   else return 0;
+}
+
+
+
+
+/**
+ * \fn acheteMaison(int nombreMaison)
+ * \brief    Achète le nombre de maison demandé
+ * \detail Un terrain ne peut contenir plus de 4 maison
+ * \param    nombreMaison          Nombre de maison à acheter
+ * \return    m_maison         Le nombre de maison présente sur le terrain
+ */
+int Constructible::acheteMaison(int nombreMaison)
+{
+  int prixMaison = 300;
+  if (nombreMaison+m_maison <= 4)
+  {
+    m_maison += nombreMaison;
+    m_Proprio.prelevement(prixMaison*nombreMaison);
+  }
+  return m_maison;
   
+}
+
+//REnvoit 1 si achat ok, 0 si déja un hotel (pas plus d'un hotel par terrain)
+/**
+ * \fn acheteHotel(int nombreHotel)
+ * \brief    Achète un hotel
+ * \detail Une case ne peut contenir plus d'un hotel et un hotel ne peut être acheté que si 4 maison sont présente sur la case
+ * \param    nombreHotel          Nombre d'Hotel à acheter
+ * \return    true       L'hotel a été acheté
+ * \return    false      L'hotel n'a pas été acheté  
+ */
+bool Constructible::acheteHotel(int nombreHotel)
+{
+ if (m_maison == 4 && m_hotel ==0)
+ {
+   m_hotel++;
+   m_Proprio.prelevement(500);
+   return true;
+ }
+ return false;
 
 }
 
+/**
+ * \fn isAchetable() const
+ * \brief Vérifie si la case est une case de type achetable
+ * \return true
+ */
 bool Constructible::isAchetable() const
 {
   return true;
@@ -49,49 +148,8 @@ bool Constructible::isAchetable() const
 
 
 
-void Constructible::acheteMaison(int nombreMaison)
-{
-  m_maison += nombreMaison;
-}
 
-void Constructible::acheteHotel(int nombreHotel)
-{
-  m_hotel += nombreHotel;
-}
-
-int Constructible::getNbMaison() const
-{
-  return m_maison;
-}
-
-int Constructible::getNbHotel() const
-{
-  return m_hotel;
-}
-
-// bool Constructible::isAchetable() const
-// {
-//   return true;
-// }
-
-
-
-//  ostream& operator<<(ostream& out,  Constructible const& c)
-// {
-//   if(c.haveProprio() != 0)
-//   {
-//     //Il y n'y a pas de propriétaire
-//     out <<  c.getNom() << " (coût : " << c.getPrix() << " ) - sans propriétaire " <<endl;
-//     return out;
-//   }
-//   else if (c.getNbMaison() && c.getNbHotel() ==0 )
-//   {
-//     //Il y a un propriétaire, maison pas d'hotel
-//     out <<  c.getNom() << " (coût : " << c.getPrix() << " ) "<<"propriétaire : " <<  c.getProprio() <<", " << c.getNbMaison()<< " maison<<endl;
-//     return out;
-//   }
-// }
-   ostream& operator<<(ostream& out,  Constructible const& c)
+ ostream& operator<<(ostream& out,  Constructible const& c)
 {
    
     out <<  c.getNom() << " (coût : " << c.getPrix() << " ) - ";
@@ -122,17 +180,4 @@ int Constructible::getNbHotel() const
     }
 
     return out;
-
-  
 }
-
-
-
-  //  if(isProprio != 0)
-    //  {
-    //    flux << m_nom << " (coût : " << m_prix << " ) propriétaire : " << m_proprio;
-    //  }
-    //  else
-    //  {
-    //    flux << m_nom << " (coût : " << m_prix << " ) - pas de propriétaire";
-    //  }
