@@ -1,7 +1,6 @@
 /**
  * @file        achetable.hpp
  * @brief       Contient la déclaration de la classe Achetable
- * @details     La classe Achetable est
  * @author      Sacha CANTAT
  * @date        17/04/21
  */
@@ -22,7 +21,7 @@ class Achetable : public CaseMonop
     bool haveProprio() const;
     string getProprioName() const;
     Joueur getProprio() const;
-    bool acheter(Joueur j);
+    bool acheter(Joueur &j);
     
     virtual bool isAchetable() const override;
     virtual void affiche() const;

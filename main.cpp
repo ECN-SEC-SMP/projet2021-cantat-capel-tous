@@ -24,22 +24,22 @@ int main() {
 
 Joueur j1("sacha",1,3000);
 
-Constructible *CaseDep = new Constructible("GDN", 500, 300);
-Chance *chanceCase = new Chance();
-CaseDep->affiche();
-cout <<"Achat" <<endl;
-CaseDep->acheter(j1);
-CaseDep->affiche();
-cout << CaseDep->getProprioName()<<endl;
-cout << CaseDep->isLoyer()<<endl;
 
-cout << "Construction est achetable ? "<< CaseDep->isAchetable() << endl;
-cout << "Chance est achetable ? "<< chanceCase->isAchetable() << endl;
+Gare *gare = new Gare("Gare Du Nord",2000);
+gare->affiche();
+cout<<"Sacha achète la gare "<<endl;
+gare->acheter(j1);
 
-//cout <<*CaseDep <<endl;
+gare->affiche();
+
+
+
+
+
+
 
 Plateau plat = Plateau();
-//plat.initPlateau();
+plat.initPlateau();
 
 
 

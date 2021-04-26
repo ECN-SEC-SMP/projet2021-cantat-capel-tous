@@ -1,7 +1,6 @@
 /**
  * @file        CaseMonop.hpp
  * @brief       Contient la déclaration de la classe Achetable
- * @details     La classe CaseMonop est
  * @author      Sacha CANTAT
  * @date        17/04/21
  */
@@ -10,11 +9,20 @@
 
 using namespace std;
 
+/**
+ * \fn CaseMonop()
+ * \brief    Constructeur de CaseMonop
+ */
 CaseMonop::CaseMonop()
 {
 
 }
 
+/**
+ * \fn CaseMonop(string nom)
+ * \brief    Constructeur de CaseMonop
+ * \param    nom          nom de la case
+ */
 CaseMonop::CaseMonop(string nom) : m_nom(nom)
 {
   
@@ -45,23 +53,34 @@ CaseMonop::~CaseMonop()
 
 
 
+/**
+ * \fn getNom() const
+ * \brief    Retourne le nom de la case
+ * \return   m_nom          Attribut m_nom de CaseMonp
+ */
  string CaseMonop::getNom() const
  {
    return m_nom;
  }
 
+/**
+ * \fn getId() const
+ * \brief    Retourne l'id de la case
+ * \return   m_id          Attribut m_id de CaseMonp
+ */
 int CaseMonop::getId() const
  {
-    
-  return m_id;
+    return m_id;
  }
+
 
  ostream& operator<<(ostream& out, CaseMonop const & c)
 {
- cout << "test" << endl;
   out <<  c.getNom()<<endl;
     return out;
 }
+
+
 
  
 

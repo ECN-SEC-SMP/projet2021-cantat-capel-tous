@@ -11,6 +11,7 @@
 
 #include "Achetable.hpp"
 
+
 class Gare : public Achetable
 {
     public:

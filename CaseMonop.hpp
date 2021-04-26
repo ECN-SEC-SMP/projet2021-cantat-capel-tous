@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+//#include "Joueur.hpp"
 using namespace std;
 
 class CaseMonop
@@ -19,6 +20,11 @@ class CaseMonop
     virtual bool isAchetable() const;
     std::string getNom() const;
     int getId() const;
+
+
+    
+
+ 
     
     protected:
 
