@@ -1,7 +1,6 @@
 /**
  * @file        Constructible.hpp
  * @brief       Contient la déclaration de la classe Constructible
- * @details     La classe Constructible est
  * @author      Sacha CANTAT
  * @date        17/04/21
  */
@@ -9,16 +8,9 @@
 #include <stdlib.h>
 #include "Achetable.hpp"
 #include "Constructible.hpp"
-#include "math.h"
 //#include "Joueur.h"
 
 using namespace std;
-
-#define PRIXMAISON 200;
-#define PRIXHOTEL 350;
-
-
-
 
  /**
  * \fn Constructible(string nom, int prix, int loyer)
@@ -31,30 +23,9 @@ Constructible::Constructible(string nom, int prix, int loyer) : Achetable(nom,pr
 {
   
 }
-
 Constructible::~Constructible()
 {
   
-}
-
-/**
- * \fn getNbMaison()() const
- * \brief Vérifie si la case est une case de type achetable
- * \return m_maison     Le nombre de maison de la case
- */
-int Constructible::getNbMaison() const
-{
-  return m_maison;
-}
-
-/**
- * \fn getNbHotel()() const
- * \brief Vérifie si la case est une case de type achetable
- * \return m_hotel     Le nombre d'hotel sur la case
- */
-int Constructible::getNbHotel() const
-{
-  return m_hotel;
 }
 
 /**
@@ -127,6 +98,26 @@ bool Constructible::acheteHotel(int nombreHotel)
 }
 
 /**
+ * \fn getNbMaison()() const
+ * \brief Vérifie si la case est une case de type achetable
+ * \return m_maison     Le nombre de maison de la case
+ */
+int Constructible::getNbMaison() const
+{
+  return m_maison;
+}
+
+/**
+ * \fn getNbHotel()() const
+ * \brief Vérifie si la case est une case de type achetable
+ * \return m_hotel     Le nombre d'hotel sur la case
+ */
+int Constructible::getNbHotel() const
+{
+  return m_hotel;
+}
+
+/**
  * \fn isAchetable() const
  * \brief Vérifie si la case est une case de type achetable
  * \return true
@@ -139,7 +130,8 @@ bool Constructible::isAchetable() const
 
 
 
- ostream& operator<<(ostream& out,  Constructible const& c)
+
+   ostream& operator<<(ostream& out,  Constructible const& c)
 {
    
     out <<  c.getNom() << " (coût : " << c.getPrix() << " ) - ";
@@ -170,4 +162,6 @@ bool Constructible::isAchetable() const
     }
 
     return out;
+  
 }
+

@@ -1,7 +1,6 @@
 /**
  * @file        Gare.hpp
  * @brief       Contient la déclaration de la classe Gare
- * @details     La classe Gare est
  * @author      Sacha CANTAT
  * @date        17/04/21
  */
@@ -25,7 +24,6 @@ Gare::Gare(string nom, int prix) : Achetable(nom,prix)
 {
 
 }
-
 Gare::~Gare()
 {
 
@@ -47,7 +45,7 @@ void Gare::affiche() const
  **/
 int Gare::isLoyer() const
 {
-  return 2500*m_Proprio.NbGare(); //Renvoi 2500 * le nombre de gare
+  return 2500*m_Proprio.nbGare(); //Renvoi 2500 * le nombre de gare
 }
 
 /**
@@ -60,6 +58,9 @@ bool Gare::isAchetable() const
   return true;
 }
 
+
+
+
  ostream& operator<<(ostream& out,  Gare const& c)
 {
   out <<  c.getNom() << " (coût : " << c.getPrix() << " ) - ";
@@ -71,3 +72,19 @@ bool Gare::isAchetable() const
   }
    return out;
 }
+
+
+
+
+// void CaseMonop::afficher(ostream &flux) const
+// {
+    
+//     if(isProprio != 0)
+//     {
+//       flux << m_nom << " (coût : " << this->m_prix << " ) propriétaire : " << m_proprio;
+//     }
+//     else
+//     {
+//       flux << m_nom << " (coût : " << m_prix << " ) - pas de propriétaire";
+//     }
+// }

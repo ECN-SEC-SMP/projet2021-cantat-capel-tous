@@ -22,7 +22,7 @@ class Achetable : public CaseMonop
     bool haveProprio() const;
     string getProprioName() const;
     Joueur getProprio() const;
-    bool acheter(Joueur j);
+    bool acheter(Joueur &j);
     
     virtual bool isAchetable() const override;
     virtual void affiche() const;

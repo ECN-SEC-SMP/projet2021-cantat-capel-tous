@@ -11,6 +11,7 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+// #include <Windows.h>
 #include <iterator>
 
 using namespace std;
@@ -150,18 +151,42 @@ void Plateau::initPlateau()
 
   //On initialise les joueurs et créer le vecteurs _joueurs
   int nbJoueurs;
+  cout<<" "<<endl;
   cout<<"Veuillez saisir le nombre de joueurs voulu : " << endl;
   cin>>nbJoueurs;
   string Pseudo;
+  cout<<" "<<endl;
   cout<<"Veuillez tour à tour rentrer votre pseudo : "<< endl;
   for(int y=0; y<nbJoueurs; y++)
   {
     cin>> Pseudo;
     this->_joueurs.push_back(new Joueur(Pseudo, y, 0, this));
   } 
-  cout << "here";
-  //On affiche les cases du tableau
+  cout<<" "<<endl;
+
+
+for(int i = 0; i<=6;i++)
+{
+  if (Achetable *ach = dynamic_cast<Achetable*>(_plateau[i]))
+  {
+    ach->acheter(*_joueurs[0]);
+  }
+}
+
+//On affiche les cases du tableau
  Affiche();
+
+//  cout<<" "<<endl;
+//  cout<<"Simulation tour de jeu n°1 :  "<<endl;
+//  this->_joueurs[0]->tourDeJeu();
+//  this->_joueurs[1]->tourDeJeu();
+
+//  cout<<" "<<endl;
+//  cout<<"Simulation tour de jeu n°2 :  "<<endl;
+//  this->_joueurs[0]->tourDeJeu();
+//  this->_joueurs[1]->tourDeJeu();
+
+//  Affiche();
 }
 
 
@@ -172,10 +197,16 @@ void Plateau::initPlateau()
  * @author      Thibault CAPEL
  * @date        17/04/21
  */
-int Plateau::nbGares(Joueur j)
-{
-
-}
+// int Plateau::nbGares(Joueur* j) const{
+//   int nbGares = 0;
+//   for(Achetable* c : this->_plateau)
+//   {
+//     if(c->getProprio() != nullptr && c->getProprio()->getId() == j->getId()){
+//       nbGares++;
+//     }
+//   }
+//   return nbGares;
+// };
 
 
 /**
@@ -185,9 +216,10 @@ int Plateau::nbGares(Joueur j)
  * @author      Thibault CAPEL
  * @date        17/04/21
  */
-CaseMonop* Plateau::Avance(CaseMonop *cMonop, int numero)
+CaseMonop* Plateau::Avance(CaseMonop *cMonop, int numero, Joueur *j)
 {
-  return this->_plateau[cMonop->getId()+numero];
+  j->setPosition(j->getPosition()+numero);
+  return (this->_plateau[cMonop->getId()+numero]);
 }
 
 
@@ -208,6 +240,18 @@ Joueur* Plateau::GetJoueurActuel()
 {
   return _joueurs[_tour];
 }
+
+
+/**
+ * @file        Plateau.cpp
+ * @brief       Fonction permettant de retourner le tableau de case  
+ * @details     accesseur plateau 
+ * @author      Thibault CAPEL
+ * @date        17/04/21
+ */
+// CaseMonop* Plateau::getPlateau() {
+//   return _plateau;
+// };
 
 
 /**
@@ -248,10 +292,10 @@ vector<Joueur*> Plateau::GetJoueurs()
  * @author      Thibault CAPEL
  * @date        17/04/21
  */
-// CaseMonop* Plateau::GetCase(int numero)
-// {
-//   return this->_plateau[numero];
-// }
+CaseMonop* Plateau::GetCase(int numero)
+{
+  return this->_plateau[numero];
+}
 
 
 // void Plateau::JoueurActuelAPerdu()
@@ -260,21 +304,51 @@ vector<Joueur*> Plateau::GetJoueurs()
 // }
 
 
+
+bool Plateau::finPartie() {
+    if (this->_joueurs.size() <= 1) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
 /**
  * @file        Plateau.cpp
- * @brief       Fonction permettant de terminer la partie 
- * @details     Cette fonction retourne le joueurs restant (le gagnant)
+ * @brief       Fonction permettant de démarrer la partie 
  * @author      Thibault CAPEL
- * @date        17/04/21
+ * @date        25/04/21
  */
-bool Plateau::EstFini()
-{
-  int nbJoueursRestants = 0;
-  // for (int i = 0; i < _joueurs.size(); i++)
-  // {
-  //   if (!_joueurs[i]->APerdu())
-  //   nbJoueursRestants++;
-  // }
+ void Plateau::startGame()
+ {
+   /*
+  while(!this->finPartie()) 
+  {
+    for (Joueur *j : this->_joueurs) 
+    {          
+      cin.get();
+      j->tourDeJeu();
+      this->Affiche();
+      }
+  }
+  cout << endl;
+  cout << "--------> WINNER <--------" << endl;
+  cout << " Player : " << this->_joueurs[0]->getNom() << endl;
+*/
+ cout<<" "<<endl;
+  cout<<"Simulation tour de jeu n°1 :  "<<endl;
+ this->_joueurs[0]->tourDeJeu();
+  this->_joueurs[1]->tourDeJeu();
 
-  return nbJoueursRestants == 1;
-}
+  Affiche();
+
+  cout<<" "<<endl;
+  cout<<"Simulation tour de jeu n°2 :  "<<endl;
+  this->_joueurs[0]->tourDeJeu();
+  this->_joueurs[1]->tourDeJeu();
+
+  Affiche();
+
+ }
+ 

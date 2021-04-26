@@ -11,16 +11,17 @@
 
 #include "Achetable.hpp"
 
+
 class Gare : public Achetable
 {
     public:
-      Gare(std::string nom, int prix);
-      ~Gare();
+    Gare(std::string nom, int prix);
+    ~Gare();
 
-      void affiche() const override;
-      int isLoyer() const override;
+   void affiche() const override;
+   int isLoyer() const override;
 
-      bool isAchetable() const override;
+   bool isAchetable() const override;
     
     protected:
 

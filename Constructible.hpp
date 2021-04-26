@@ -14,7 +14,7 @@ class Constructible : public Achetable
     int getNbMaison() const;
     int getNbHotel() const;
     
-    int acheteMaison(int nombre);
+     int acheteMaison(int nombre);
     bool acheteHotel(int nombre);
     
     virtual void affiche() const override;

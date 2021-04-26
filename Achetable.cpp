@@ -9,12 +9,11 @@
 #include <stdlib.h>
 #include "CaseMonop.hpp"
 #include "Achetable.hpp"
+#include "Gare.hpp"
 
 #include "Joueur.hpp"
 
 using namespace std;
-
-
 
 
 /**
@@ -34,7 +33,9 @@ Achetable::~Achetable()
   
 }
 
-//Accesseur : 
+
+
+//Accesseur
 
 /**
  * \fn getPrix() const
@@ -77,11 +78,12 @@ string Achetable::getProprioName() const
  * \return    true       La case a été achetée
  * \return    false      La case  n'a pas été achetée
  */
-bool Achetable::acheter(Joueur j)
+bool Achetable::acheter(Joueur &j)
 {
   if (j.prelevement(m_prix) && this->haveProprio() == 0)
   {
     m_Proprio = j;
+     if (Gare *gar = dynamic_cast<Gare*>(this)) j.adGare();
     return true; //REnvoit 1 si achat effectué
   }
   else return false; // Renvoit 0 si pas assez d'argent chez le joeur

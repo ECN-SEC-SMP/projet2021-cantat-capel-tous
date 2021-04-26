@@ -1,7 +1,6 @@
 /**
  * @file        CaseMonop.hpp
  * @brief       Contient la déclaration de la classe Achetable
- * @details     La classe CaseMonop est
  * @author      Sacha CANTAT
  * @date        17/04/21
  */
@@ -36,7 +35,7 @@ CaseMonop::~CaseMonop()
 
  void CaseMonop::affiche() const
  {
-
+    cout <<"CM"<<endl;
  }
 
  bool CaseMonop::isAchetable() const
@@ -48,6 +47,7 @@ CaseMonop::~CaseMonop()
  {
     return 0;
  }
+
 
 
 
@@ -73,8 +73,20 @@ int CaseMonop::getId() const
     return m_id;
  }
 
+
  ostream& operator<<(ostream& out, CaseMonop const & c)
 {
   out <<  c.getNom()<<endl;
-  return out;
+    return out;
 }
+
+
+
+ 
+
+// ostream& operator<<( ostream &flux, CaseMonop const& caseM )
+// {
+//     //Affichage des attributs
+//     caseM.afficherflux
+//     return flux;
+// }
