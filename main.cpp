@@ -1,5 +1,3 @@
-
-
 #include <iostream>
 #include "Joueur.hpp"
 #include <stdio.h>
