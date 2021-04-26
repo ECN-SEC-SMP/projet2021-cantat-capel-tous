@@ -13,7 +13,6 @@
 #include "Depart.hpp"
 #include "Gare.hpp"
 #include "Chance.hpp"
-#include <time.h>
 
 
 
@@ -23,51 +22,24 @@ using namespace std;
 
 int main() {
 
-srand(time(NULL));
-
-
 Joueur j1("sacha",1,3000);
 
-Gare *gare = new Gare("GDN", 500);
-cout << "Nb Gare Sacha :" << j1.nbGare()<<endl;
-cout <<"Sacha achète Gare"<<endl;
+
+Gare *gare = new Gare("Gare Du Nord",2000);
+gare->affiche();
+cout<<"Sacha achète la gare "<<endl;
 gare->acheter(j1);
-cout << "Nb Gare Sacha :" << j1.nbGare()<<endl;
 
-
-
-
-/*
-Chance *chanceCase = new Chance();
-CaseDep->affiche();
-cout <<"Achat" <<endl;
-CaseDep->acheter(j1);
-CaseDep->affiche();
-cout << CaseDep->getProprioName()<<endl;
-cout << CaseDep->isLoyer()<<endl;
-
-cout << "Construction est achetable ? "<< CaseDep->isAchetable() << endl;
-cout << "Chance est achetable ? "<< chanceCase->isAchetable() << endl;
-
-//cout <<*CaseDep <<endl;
-*/
+gare->affiche();
 
 
 
 
 
-Plateau plat =Plateau();
 
-//cout << j1 <<endl;
+
+Plateau plat = Plateau();
 plat.initPlateau();
-plat.startGame();
-
-
-//j1.tourDeJeu();
-
-
-
-
 
 
 
@@ -124,29 +96,30 @@ plat.startGame();
 // j1.tourDeJeu();
 // j1.tourDeJeu();
 
-/*
- Joueur j1("Sacha",0,0);
- Joueur j2("Thibault",0,0);
- 
-//test 0
-cout<<"TEST 0 : Fortunes joueurs correctement inialisées"<<endl;
-cout <<"Fortune du joueur " <<j1.getNom()<<" est de : "<<j1.getFortune()<<endl;
-cout <<"Fortune du joueur " <<j2.getNom()<<" est de : "<<j2.getFortune()<<endl;
- 
-//test 1
-cout<<""<<endl;
-cout<<"TEST 1 : Paiment de 5 crédits de j1 à j2"<<endl;
-j1.paiement(5,j2);
-cout <<"Fortune du joueur " <<j1.getNom()<<" est de : "<<j1.getFortune()<<endl;
-cout <<"Fortune du joueur " <<j2.getNom()<<" est de : "<<j2.getFortune()<<endl;
- 
-//test 2
-cout<<""<<endl;
-cout<<"TEST 2 : Paiment avec insufisance crédit de j1 à j2"<<endl;
-if (j1.paiement(500000,j2)==0) {
- cout <<"Le joueur "<<j1.getNom()<<" n'a pas assez d'argent pour payer le joueur  "<<j2.getNom()<<endl;
-}
 
-*/
+// //test 0
+// cout<<"TEST 0 : Fortunes joueurs correctement inialisées"<<endl;
+// cout <<"Fortune du joueur 1 : " <<j1.getFortune()<<endl;
+// cout <<"Fortune du joueur 2 : " <<j2.getFortune()<<endl;
 
+
+
+// //test 1
+// cout<<""<<endl;
+// cout<<"TEST 1 : paiment de 5 crédits de j1 à j2"<<endl;
+// j1.paiement(5,j2);
+// cout <<"Fortune du joueur 1 : " <<j1.getFortune()<<endl;
+// cout <<"Fortune du joueur 2 : " <<j2.getFortune()<<endl;
+
+// //test 2
+// cout<<""<<endl;
+// cout<<"TEST 2 : paiment avec insufisance crédit de j1 à j2"<<endl;
+// if (j1.paiement(500000,j2)==0) {
+//   cout <<"le joueur courant n'a pas assez d'argent pour régler"<<endl;
+// }
+
+// cout<<""<<endl;
+// cout <<"Fortune du joueur 1 : " <<j1.getFortune()<<endl;
+// cout <<"Fortune du joueur 2 : " <<j2.getFortune()<<endl;
+// }
 }
