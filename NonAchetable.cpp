@@ -1,7 +1,6 @@
 /**
  * @file        NonAchetable.cpp
  * @brief       Contient la déclaration de la classe NonAchetable
- * @details     La classe NonAchetable est
  * @author      Sacha CANTAT
  * @date        17/04/21
  */

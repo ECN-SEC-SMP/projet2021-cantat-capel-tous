@@ -1,7 +1,6 @@
 /**
  * @file        achetable.cpp
  * @brief       Contient la déclaration de la classe Achetable
- * @details     La classe Achetable est
  * @author      Sacha CANTAT
  * @date        17/04/21
  */

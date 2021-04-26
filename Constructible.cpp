@@ -15,16 +15,10 @@
 using namespace std;
 
 #define PRIXMAISON 200;
+#define PRIXHOTEL 350;
 
 
-/**
- * \fn Constructible(string nom, int prix, int loyer)
- * \brief Constructeur d'une case Constructible avec un nom, un prix et un loyer
- *
- * \param nom 
- * \param nom 
- * \return Instance nouvelle allouée d'un objet de type Str_t ou NULL.
- */
+
 
  /**
  * \fn Constructible(string nom, int prix, int loyer)
@@ -81,12 +75,9 @@ int Constructible::isLoyer() const
 {
   if(this->haveProprio())
   {
-    int a = 8; //Coeff pour maison
-    int b = 2; //Coeff pour hotel
-
-     a= pow(a,m_maison);
-     b= pow(b,m_hotel);
-    int loyer = m_loyer * a * b;
+    int a = 200; //Coeff pour maison
+    int b = 1200; //Coeff pour hotel
+    int loyer = m_loyer + a*m_maison + m_hotel*b;
     return loyer;
   }
 
@@ -106,13 +97,12 @@ int Constructible::isLoyer() const
 int Constructible::acheteMaison(int nombreMaison)
 {
   int prixMaison = 300;
-  if (nombreMaison+m_maison <= 4)
+  if ((nombreMaison+m_maison <= 4) && (m_hotel == 0))
   {
     m_maison += nombreMaison;
     m_Proprio.prelevement(prixMaison*nombreMaison);
   }
   return m_maison;
-  
 }
 
 /**

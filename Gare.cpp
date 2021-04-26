@@ -36,8 +36,7 @@ Gare::~Gare()
  * \brief    Affiche les informations de la gare
  */
 void Gare::affiche() const
-
- {
+{
    cout << *this <<endl;
 }
 
@@ -61,14 +60,14 @@ bool Gare::isAchetable() const
   return true;
 }
 
-ostream& operator<<(ostream& out,  Gare const& c)
+ ostream& operator<<(ostream& out,  Gare const& c)
 {
   out <<  c.getNom() << " (coût : " << c.getPrix() << " ) - ";
   if(c.getProprioName() == string()) out << "sans propriétaire " <<endl; //Pas de propriétaire
   else 
   {
     //Il y a un propriétaire
-    out << "propriétaire : " <<  c.getProprioName() << ", loyer = XXXXX"<<endl;
+    out << "propriétaire : " <<  c.getProprioName() << ", loyer = "<< c.isLoyer() <<endl;
   }
    return out;
 }
