@@ -20,17 +20,6 @@ using namespace std;
 
 int main() {
 
-Joueur j1("sacha",1,3000);
-
-
-Gare *gare = new Gare("Gare Du Nord",2000);
-gare->affiche();
-cout<<"Sacha achète la gare "<<endl;
-gare->acheter(j1);
-
-gare->affiche();
-
-
 
 
 
