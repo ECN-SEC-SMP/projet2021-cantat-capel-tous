@@ -152,7 +152,7 @@ void Plateau::initPlateau()
   //On initialise les joueurs et créer le vecteurs _joueurs
   int nbJoueurs;
   cout<<" "<<endl;
-  cout<<"Veuillez saisir le nombre de joueurs voulu : " << endl;
+  cout<<"Veuillez saisir le nombre de joueurs voulu (2 dans ce mode de simulation) : " << endl;
   cin>>nbJoueurs;
   string Pseudo;
   cout<<" "<<endl;
@@ -164,6 +164,7 @@ void Plateau::initPlateau()
   } 
   cout<<" "<<endl;
 
+//SIMULATION PROPRIO
 
 for(int i = 0; i<=6;i++)
 {
@@ -176,15 +177,16 @@ for(int i = 0; i<=6;i++)
 //On affiche les cases du tableau
  Affiche();
 
-//  cout<<" "<<endl;
-//  cout<<"Simulation tour de jeu n°1 :  "<<endl;
-//  this->_joueurs[0]->tourDeJeu();
-//  this->_joueurs[1]->tourDeJeu();
+// SIMULATION TOUR DE JEU
+  cout<<" "<<endl;
+  cout<<"Simulation tour de jeu n°1 :  "<<endl;
+  this->_joueurs[0]->tourDeJeu();
+  this->_joueurs[1]->tourDeJeu();
 
-//  cout<<" "<<endl;
-//  cout<<"Simulation tour de jeu n°2 :  "<<endl;
-//  this->_joueurs[0]->tourDeJeu();
-//  this->_joueurs[1]->tourDeJeu();
+  cout<<" "<<endl;
+  cout<<"Simulation tour de jeu n°2 :  "<<endl;
+  this->_joueurs[0]->tourDeJeu();
+  this->_joueurs[1]->tourDeJeu();
 
 //  Affiche();
 }
