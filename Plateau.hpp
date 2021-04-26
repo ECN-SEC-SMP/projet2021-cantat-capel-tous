@@ -25,17 +25,19 @@ public:
 /*****Méthodes*****/
 //nécéssaire
   void initPlateau();
-  int nbGares(Joueur j);
+  int nbGares(Joueur* j) const;
   void Affiche();
-  CaseMonop* Avance(CaseMonop *c, int d);
-  bool EstFini();
+  CaseMonop* Avance(CaseMonop *c, int d, Joueur *j);
 //supplémentaire
   void AjouterJoueur(string nomJoueur);
   Joueur* GetJoueurActuel();
+  //CaseMonop* getPlateau() const;
   vector<Joueur*> GetJoueurs();
   void FinirTour();
-  Case* GetCase(int);
+  bool finPartie();
+  CaseMonop* GetCase(int num); 
   void JoueurActuelAPerdu();
+  void startGame();
 private:
 /*****Attributs*****/
   CaseMonop* _plateau[40];

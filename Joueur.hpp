@@ -17,6 +17,7 @@ private :
   int fortune;
   int position;
   Plateau* plateau;
+  int gare;
 
 
 public :
@@ -32,13 +33,19 @@ public :
   string getNom() const;
   int getFortune() const;
   int getPosition() const;
+  
+
+
+  void setPosition(int p);
 
   ///méthodes
-  bool paiement(int somme, Joueur &jAdverse);
+  bool paiement(int somme, Joueur jAdverse);
   bool prelevement(int somme_du);
   int lanceDe();
   void tourDeJeu();
-  int NbGare() const;
+  void ajouteGare();
+  int nbGare() const;
+  void adGare();
 
 };
 

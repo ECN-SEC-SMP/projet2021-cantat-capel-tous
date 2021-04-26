@@ -17,6 +17,10 @@
 using namespace std;
 
 
+/**
+ * \fn NonAchetable()
+ * \brief    Constructeur de case NonAchetable
+ */
 NonAchetable::NonAchetable()
 {
 
